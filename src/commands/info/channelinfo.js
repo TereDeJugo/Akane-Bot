@@ -4,7 +4,7 @@ module.exports = {
     name: "channelinfo",
     alias: ["chinfo"],
     description: "Ve la informacion de un canal",
-    usage: "channelinfo [mention | id]",
+    usage: "channelinfo <mencion | id>",
     category: "Informacion",
     run: async (client, message, args) => {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);

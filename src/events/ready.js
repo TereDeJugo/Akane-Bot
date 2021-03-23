@@ -5,5 +5,4 @@ module.exports = (client, ready) => {
         client.user.setActivity(`el Pyschopass de ${client.users.cache.size} usuarios!`, { type: "WATCHING" });
     }, 5000);
 
-
 }

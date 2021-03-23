@@ -5,7 +5,7 @@ module.exports = {
     name: "setprefix",
     alias: ["prefix"],
     description: "Cambia el prefix de los comandos!",
-    usage: "setprefix [prefix]",
+    usage: "setprefix <prefix>",
     category: "Configuracion",
     run: (client, message, args) => {
 

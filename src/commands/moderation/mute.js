@@ -6,7 +6,7 @@ module.exports = {
     name: "mute",
     alias: [],
     description: "Mutea a un miembro para que no pueda hablar en el chat!",
-    usage: "mute [mencion | id]",
+    usage: "mute <mencion | id>",
     category: "Moderacion",
     run: async (client, message, args) => {
         if (!mutes.has(message.guild.id)) {

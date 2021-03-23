@@ -1,6 +1,8 @@
 module.exports = {
   name: "userinfo",
   alias: ["user"],
+  description: "Consulta la informacion de un usuario o la tuya",
+  usage: "userinfo [mencion | id]",
   category: "Informacion",
   run: async (client, message, args) => {
     const { MessageEmbed } = require("discord.js");

@@ -37,7 +37,7 @@ module.exports = {
 	name: 'psychopass',
 	alias: ['psy'],
 	description: 'Consulta tu nivel de psychopass',
-	usage: 'psychopass <mention | id>',
+	usage: 'psychopass [mention | id]',
 	category: 'PsychoPass',
 	run: (client, message, args) => {
 		const psy_level = Math.floor(Math.random() * 400 + 1);

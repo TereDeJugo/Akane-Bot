@@ -6,7 +6,7 @@ module.exports = {
     name: "setmute",
     alias: ["setmuterole"],
     description: "Selecciona el rol para silenciar",
-    usage: "setmute [role id | mention]",
+    usage: "setmute <mencion | id>",
     category: "Configuracion",
     run: (client, message, args) => {
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);

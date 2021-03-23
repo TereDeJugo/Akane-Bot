@@ -4,7 +4,7 @@ module.exports = {
     name: "roleinfo",
     alias: ["rol", "rolinfo"],
     description: "Ve la informacion de un rol del servidor!",
-    usage: "roleinfo [mention | id]",
+    usage: "roleinfo <mention | id>",
     category: "Informacion",
     run: async (client, message, args) => {
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);

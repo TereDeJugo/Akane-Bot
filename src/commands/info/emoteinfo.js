@@ -4,7 +4,7 @@ module.exports = {
     name: "emoteinfo",
     alias: ["emojiinfo", "emoji", "emote"],
     description: "Ve la informacion de un emote del servidor",
-    usage: "emoteinfo [emote]",
+    usage: "emoteinfo <emote>",
     category: "Informacion",
     run: async (client, message, args) => {
         const emoji = message.guild.emojis.cache.find(x => x.name === args[0].split(":")[1]);

@@ -1,8 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "ban",
+  name: "softban",
   alias: [],
+  description: "Banea a un usuario y borra sus mensajes mas recientes.",
+  usage: "softban <mencion | id>",
   category: "Moderacion",
   run: (client, message, args) => {
     if (!message.member.hasPermission("BAN_MEMBERS")) {

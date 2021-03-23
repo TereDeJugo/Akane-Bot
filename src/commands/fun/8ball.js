@@ -4,7 +4,7 @@ module.exports = {
     name: "8ball",
     alias: [],
     description: "Akane te respondera a tu pregunta...",
-    usage: "8ball [pregunta]",
+    usage: "8ball <pregunta>",
     category: "Diversion",
     run: (client, message, args) => {
         const answ = [

@@ -2,7 +2,7 @@ module.exports = {
     name: "rps",
     alias: ["ppt"],
     description: "Juega a piedra papel o tijeras junto a Akane!",
-    usage: "rps [piedra | papel | tijeras]",
+    usage: "rps <piedra | papel | tijeras>",
     category: "Diversion",
     run: (client, message, args) => {
         let answ = [];

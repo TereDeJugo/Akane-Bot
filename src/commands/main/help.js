@@ -25,10 +25,10 @@ module.exports = {
                     { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
                     { name: ":bulb: | Principal:", value: "`help`, `invite`" },
                     { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`" },
-                    { name: ":crystal_ball: | Informacion:", value: "`serverinfo`, `userinfo` `emoteinfo`, `channelinfo`, `roleinfo`" },
+                    { name: ":crystal_ball: | Informacion:", value: "`serverinfo`, `userinfo`, `emoteinfo`, `channelinfo`, `roleinfo`" },
                     { name: ":books: | Utilidad:", value: "`avatar`, `editsnipe`, `jumbo`, `ping`, `snipe`, `suggestion`" },
                     { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
-                    { name: ":shield: | Seguridad y Staff:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
+                    { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
                     { name: ":gear: | Configuracion:", value: "`setprefix`, `setsuggestion`, `setmute` " },
                     { name: ":no_entry: | NSFW:", value: nsfw_description },
                 )
@@ -46,6 +46,7 @@ module.exports = {
                         { name: "Nombre del comando:", value: cmd.name},
                         { name: "Descripcion:", value: cmd.description },
                         { name: "Uso:", value: `\`\`\`${prefix}${cmd.usage}\`\`\`` })
+                    .setFooter("[] - opcional | <> - obligatorio")    
                 if (cmd.alias[0]) {
                     cmd_embed.addFields(
                         { name: "Alias:", value: cmd.alias.join(" | ") });

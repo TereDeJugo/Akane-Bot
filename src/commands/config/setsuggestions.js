@@ -5,7 +5,7 @@ module.exports = {
     name: "setsuggestion",
     alias: ["setsg", "setsuggestions"],
     description: "Selecciona el canal de sugerencias",
-    usage: "setsuggestion [channel id | mention]",
+    usage: "setsuggestion [mencion | id]",
     category: "Configuracion",
     run: (client, message, args) => {
         if (!message.member.hasPermission("ADMINISTRATOR")) {

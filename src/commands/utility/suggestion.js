@@ -6,7 +6,7 @@ module.exports = {
     name: "suggestion",
     alias: ["sg"],
     description: "Haz una sugerencia",
-    usage: "suggestion [sugerencia]",
+    usage: "suggestion <sugerencia>",
     category: "Utilidad",
     run: async (client, message, args) => {
         if (!args[0]) {

@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 module.exports = {
   name: "kick",
   alias: [],
+  description: "Kickea a un usuario",
+  usage: "kick <mencion | id>",
   category: "Moderacion",
   run: (client, message, args) => {
     if (!message.member.hasPermission("KICK_MEMBERS")) {

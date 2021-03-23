@@ -3,6 +3,8 @@ const Discord = require("discord.js");
 module.exports = {
   name: "clean",
   alias: [],
+  description: "Limpia mensajes del chat",
+  usage: "clean [numero de mensajes a borrar]",
   category: "Moderacion",
   run: async (client, message, args) => {
     if (!message.member.hasPermission("MANAGE_MESSAGES"))

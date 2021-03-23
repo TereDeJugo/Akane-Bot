@@ -3,7 +3,9 @@ const Discord = require("discord.js");
 module.exports = {
   name: "avatar",
   alias: ["userimage", "usericon", "icon"],
-  description: "Te muestra el avatar",
+  description: "Te muestra tu avatar o el de otro usuario",
+  usage: "avatar [mention]",
+  category: "Utilidad",
   run: (client, message, args) => {
     let description;
     let user = message.mentions.users.first() || message.author;

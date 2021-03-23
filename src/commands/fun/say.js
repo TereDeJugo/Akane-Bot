@@ -5,7 +5,7 @@ module.exports = {
     alias: [],
     category: "Diversion",
     description: "Haz que Akane diga lo que quieras!",
-    usage: "say [texto]",
+    usage: "say <texto>",
     run: (client, message, args) => {
         if (!args[0]) {
             return message.channel.send("Ingresa el texto que quieras que diga...");

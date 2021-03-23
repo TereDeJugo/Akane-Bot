@@ -12,7 +12,7 @@ module.exports = {
   name: "dominator",
   alias: ["dom"],
   description: "Usa el dominator en ti mismo o otro usuario",
-  usage: "dominator <mention | id>",
+  usage: "dominator [mention | id]",
   category: "PsychoPass",
   run: (client, message, args) => {
     let random = Math.floor(Math.random() * gifs.length);

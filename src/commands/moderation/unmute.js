@@ -6,7 +6,7 @@ module.exports = {
     name: "unmute",
     alias: [],
     description: "Desmutea un usuario que ha sido silenciado con el comando `mute`",
-    usage: "unmute [mention | id]",
+    usage: "unmute <mencion | id>",
     category: "Moderacion",
     run: async (client, message, args) => {
         if (!mutes.has(message.guild.id)) {
