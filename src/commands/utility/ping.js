@@ -5,7 +5,7 @@ module.exports = {
     alias: ["p"],
     description: "Muestra el ping de Akane",
     usage: "ping",
-    category: "Utilidad"
+    category: "Utilidad",
     run: (client, message, args) => {
         message.channel.send("Pong dice que").then(msg => {
             setTimeout(() => {
