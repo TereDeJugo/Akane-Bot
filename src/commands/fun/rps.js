@@ -6,7 +6,7 @@ module.exports = {
     category: "Diversion",
     run: (client, message, args) => {
         let answ = [];
-        let random = Math.floor(Math.random() * random.length);
+        let random = Math.floor(Math.random() * answ.length);
 
         if (!args[0]) return message.channel.send("Debes elegir piedra, papel o tijeras");
 
@@ -17,7 +17,7 @@ module.exports = {
                 `Elijo Piedra!, Ah, al parecer es un empate ${message.author.username}!`
             ];
 
-            message.channel.send(asnw[random]);
+            message.channel.send(answ[random]);
         }
         if (args[0].toLowerCase() == "papel") {
             answ = [

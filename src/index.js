@@ -4,6 +4,13 @@ const fs = require("fs");
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
+client.rdm = async (f) => {
+    let data = fs.readFileSync(f);
+    const parse = JSON.parse(data).file;
+    const result = await parse[Math.floor(Math.random() * parse.length)];
+    return result;
+};
+
 
 const dirs = [
     __dirname + "/commands/main",
@@ -46,5 +53,3 @@ for (const file of fs.readdirSync(__dirname + "/events")) {
 }
 
 client.login(process.env.TOKEN); 
-
-// :D

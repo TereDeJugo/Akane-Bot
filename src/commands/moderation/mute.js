@@ -1,6 +1,7 @@
 const Discord = require("discord.js")
 const db = require("megadb");
 const mutes = new db.crearDB("mutes");
+const muteds = new db.crearDB("muteds")
 
 module.exports = {
     name: "mute",
@@ -54,6 +55,8 @@ module.exports = {
                 .setDescription(`**Razon:** ${reason}`)
                 .setFooter(`Muteado por ${message.author.username}`)
             message.channel.send(embed)
+
+            muteds.set(user.id, true);
         })
     }
 }
