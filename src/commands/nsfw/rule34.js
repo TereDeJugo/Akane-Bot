@@ -8,7 +8,7 @@ module.exports = {
     usage: "rule34 [busqueda]",
     category: "NSFW",
     run: (client, message, args) => {
-        const tags = args.join(" ");
+        const tags = args.join(" ").toLowerCase();
 
         if (!tags) {
             booru.search("rule34", ["hentai"], { limit: 3, random: true })

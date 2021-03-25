@@ -9,8 +9,7 @@ client.rdm = async (f) => {
     const parse = JSON.parse(data).file;
     const result = await parse[Math.floor(Math.random() * parse.length)];
     return result;
-};
-
+    };
 
 const dirs = [
     __dirname + "/commands/main",

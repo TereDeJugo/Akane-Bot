@@ -13,7 +13,7 @@ module.exports = {
         let nsfw_description = `Debes poner ${prefix}help en un canal nsfw para poder ver estos comandos!`;
 
         if (prefixes.has(message.guild.id)) prefix = await prefixes.get(message.guild.id);
-        if (message.channel.nsfw) nsfw_description = "`rule34`, `hentai`, `trap`, `yuri`, `boobs`, `feet`, `neko`, `kitsune`";
+        if (message.channel.nsfw) nsfw_description = "`rule34`, `hentai`, `trap`, `yuri`, `boobs`, `feet`, `neko`, `kitsune`, `pussy`, `futanari`, `femdom`, `cumsluts`, `holo`";
 
         if (!args[0]) {
             const embed = new Discord.MessageEmbed()

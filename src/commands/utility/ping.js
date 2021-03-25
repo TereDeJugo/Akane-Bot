@@ -7,9 +7,12 @@ module.exports = {
     usage: "ping",
     category: "Utilidad",
     run: (client, message, args) => {
-        message.channel.send("Pong dice que").then(msg => {
+        message.channel.send("**Pong!**").then(msg => {
             setTimeout(() => {
-                msg.edit("Tengo un ping de " + (Date.now() - msg.createdTimestamp));
+                const embed = new Discord.MessageEmbed()
+                .setColor(process.env.COLOR)
+                .setDescription(`Mensaje: ${msg.createdTimestamp - message.createdTimestamp}ms\nAPI: ${Math.round(client.ws.ping)}ms`)
+                msg.edit(embed)
             }, 1000);
         });
     }

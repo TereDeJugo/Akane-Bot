@@ -5,6 +5,8 @@ module.exports = async (client, message) => {
     let prefix = process.env.PREFIX
     if (prefixes.has(message.guild.id)) prefix = await prefixes.get(message.guild.id);
 
+    if(message.content == "<@!822200902475710585>") return message.channel.send(`Mi prefix es **${prefix}**`)
+
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
     let args = message.content.slice(prefix.length).split(/ +/);
