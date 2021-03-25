@@ -9,7 +9,10 @@ module.exports = {
   run: async (client, message, args) => {
     
     let emoji = message.guild.emojis.cache.find(x => x.name === args[0].split(":")[1])
-        if (!emoji) return message.channel.send("")
+    
+    if (!emoji) {
+        return message.channel.send("Debes colocar un emoji valido del servidor")
+    }
     
     const embed = new Discord.MessageEmbed()
     .setColor("RANDOM")
