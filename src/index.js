@@ -1,5 +1,9 @@
+// Require Packaxes
+
 const Discord = require("discord.js");
 const fs = require("fs");
+
+// Discord Client config
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
 client.commands = new Discord.Collection();
@@ -22,6 +26,8 @@ const dirs = [
     __dirname + "/commands/utility",
     __dirname + "/commands/owner",
 ];
+
+// Commands & Events Handler
 
 dirs.forEach(x => {
     let file2 = fs.readdirSync(x);
@@ -50,5 +56,7 @@ for (const file of fs.readdirSync(__dirname + "/events")) {
         client.on(name, content.bind(null, client));
     }
 }
+
+// Login with Token
 
 client.login(process.env.TOKEN); 
