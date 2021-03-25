@@ -13,10 +13,10 @@ module.exports = {
             return message.channel.send("Ey, no veo tus permisos de administrador")
         }
         if (!args[0]) {
-            return message.channel.send("Dime, a que quieres que cambie mi prefix?");
+            return message.channel.send("Dime, ¿a que prefix quieres que cambie?");
         } else {
             prefixes.set(message.guild.id, args[0]);
-            return message.channel.send(`Eh cambiado mi prefix a: **${args[0]}**`)
+            return message.channel.send(`He guardado mi nuevo prefix: **${args[0]}**`)
         }
     }
 };

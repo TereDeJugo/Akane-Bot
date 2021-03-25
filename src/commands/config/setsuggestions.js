@@ -18,7 +18,7 @@ module.exports = {
             return message.channel.send("Debes mencionar un canal valido o la id de uno!");
         } else {
             suggestions.set(message.guild.id, channel.id)
-            message.channel.send(`Eh seleccionado ${channel} como el nuevo canal de sugerencias!`);
+            message.channel.send(`He guardado ${channel} como el nuevo canal de sugerencias!`);
         }
     }
 };

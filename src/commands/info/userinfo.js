@@ -33,8 +33,6 @@ module.exports = {
         status = "Desconectado";
         break;
     }
-    
-    
 
     const embed = new MessageEmbed()
       .setTitle(`Informacion del usuario ${user.user.username}`)
