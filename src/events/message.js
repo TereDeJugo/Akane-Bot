@@ -14,8 +14,12 @@ module.exports = async (client, message) => {
 
     let cmd = client.commands.get(command) || client.aliases.get(command);
     if (!cmd) return;
+
     if(cmd.category == "NSFW" && !message.channel.nsfw) {
         return message.channel.send("No puedes usar este comando si no estas en un canal **nsfw**")
+    }
+    if(cmd.category == "Configuration" && message.member.hasPermission("ADMINISTRATOR")) {
+        return message.channel.send("No veo tus permisos de administrador para usar este comando.")
     }
     
     cmd.run(client, message, args);

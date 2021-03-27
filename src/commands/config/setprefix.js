@@ -8,10 +8,6 @@ module.exports = {
     usage: "setprefix <prefix>",
     category: "Configuracion",
     run: (client, message, args) => {
-
-        if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.channel.send("Ey, no veo tus permisos de administrador")
-        }
         if (!args[0]) {
             return message.channel.send("Dime, ¿a que prefix quieres que cambie?");
         } else {

@@ -1,4 +1,5 @@
 const db = require("megadb");
+const autoroles = require("autoroles")
 const mutes = new db.crearDB("muteds")
 const muteds = new db.crearDB("muteds");
 

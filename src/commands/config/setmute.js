@@ -11,9 +11,6 @@ module.exports = {
     run: (client, message, args) => {
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
-        if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.channel.send("Ey, no veo tus permisos de administrador.")
-        }
         if (!role) {
             return message.channel.send("Debes introducir un rol valido, recomiendo que ese rol sea denegado de los permisos de escribir en los canales, para el buen funcionamiento del mute.")
         } else {

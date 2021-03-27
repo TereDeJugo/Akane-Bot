@@ -8,10 +8,6 @@ module.exports = {
     usage: "setsuggestion [mencion | id]",
     category: "Configuracion",
     run: (client, message, args) => {
-        if (!message.member.hasPermission("ADMINISTRATOR")) {
-            return message.channel.send("Ey! No veo tus permisos de Administrador");
-        }
-
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);
 
         if (!channel) {
