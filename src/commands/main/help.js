@@ -25,7 +25,7 @@ module.exports = {
                     { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
                     { name: ":bulb: | Principal:", value: "`help`, `invite`" },
                     { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`" },
-                    { name: ":crystal_ball: | Informacion:", value: "`serverinfo`, `userinfo`, `emoteinfo`, `channelinfo`, `roleinfo`" },
+                    { name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
                     { name: ":books: | Utilidad:", value: "`avatar`, `editsnipe`, `jumbo`, `ping`, `snipe`, `suggestion`" },
                     { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
                     { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },

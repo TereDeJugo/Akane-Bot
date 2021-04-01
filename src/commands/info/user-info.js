@@ -1,6 +1,6 @@
 module.exports = {
-  name: "userinfo",
-  alias: ["user"],
+  name: "user-info",
+  alias: ["user", "userinfo"],
   description: "Consulta la informacion de un usuario o la tuya",
   usage: "userinfo [mencion | id]",
   category: "Informacion",

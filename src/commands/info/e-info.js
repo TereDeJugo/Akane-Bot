@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "emoteinfo",
-    alias: ["emojiinfo", "emoji", "emote"],
+    name: "e-info",
+    alias: ["emoji-info", "emoji", "emote", "einfo"],
     description: "Ve la informacion de un emote del servidor",
-    usage: "emoteinfo <emote>",
+    usage: "e-info <emote>",
     category: "Informacion",
     run: async (client, message, args) => {
         const emoji = message.guild.emojis.cache.find(x => x.name === args[0].split(":")[1]);

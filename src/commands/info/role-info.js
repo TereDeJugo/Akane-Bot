@@ -1,15 +1,17 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "roleinfo",
-    alias: ["rol", "rolinfo"],
+    name: "role-info",
+    alias: ["role", "roleinfo"],
     description: "Ve la informacion de un rol del servidor!",
     usage: "roleinfo <mention | id>",
     category: "Informacion",
     run: async (client, message, args) => {
         const role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);
 
-        if (!role) return message.channel.send("Debes mencionar o colocar la id de un rol valido!");
+        if (!role) {
+            return message.channel.send("Debes mencionar o colocar la id de un rol valido!");
+        }
 
         const embed = new Discord.MessageEmbed()
             .setColor("RANDOM")
