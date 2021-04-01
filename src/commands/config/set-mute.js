@@ -3,10 +3,10 @@ const db = require("megadb");
 const mutes = new db.crearDB("mutes");
 
 module.exports = {
-    name: "setmute",
-    alias: ["setmuterole"],
+    name: "set-mute",
+    alias: ["set-muterole", "setmute"],
     description: "Selecciona el rol para silenciar",
-    usage: "setmute <mencion | id>",
+    usage: "set-mute <mencion | id>",
     category: "Configuracion",
     run: (client, message, args) => {
         let role = message.mentions.roles.first() || message.guild.roles.cache.get(args[0]);

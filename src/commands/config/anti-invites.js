@@ -1,11 +1,11 @@
 const db = require("megadb");
-const invites = new db.crearDB("invites")
+const invitesoff = new db.crearDB("invitesoff");
 
 module.exports = {
-    name: "antinvites",
-    alias: ["setantinivtes"],
+    name: "anti-invites",
+    alias: [],
     description: "Activa o Desactiva las invitaciones del servidor",
-    usage: "antiinvites <on | off>",
+    usage: "anti-invites <on | off>",
     category: "Configuracion",
     run: (client, message, args) => {
         if (!args[0]) {
@@ -16,7 +16,7 @@ module.exports = {
                 return message.channel.send("Debes poner los canales desactivados o en su defecto `none`");
             }
             if (args[1].toLowerCase() == "none") {
-                invites.set(message.guild.id, "none");
+                invitesoff.set(message.guild.id, "none");
                 return message.channel.send("Anti invitaciones activado")
             } else {
                 let channels = args.slice(1);
@@ -33,14 +33,14 @@ module.exports = {
                 })
 
                 if (ch_arr.length > 0) {
-                    invites.set(message.guild.id, ch_arr)
+                    invitesoff.set(message.guild.id, ch_arr)
                     return message.channel.send("Anti invitaciones activado")
                 }
             }
         }
         if (args[0].toLowerCase() == "off") {
-            if (invites.has(message.guild.id)) {
-                invites.delete(message.guild.id)
+            if (invitesoff.has(message.guild.id)) {
+                invitesoff.delete(message.guild.id)
                 return message.channel.send("He desactivado el anti invitaciones en el servidor");
             } else {
                 return message.channel.send("He desactivado el anti invitaciones en el servidor");

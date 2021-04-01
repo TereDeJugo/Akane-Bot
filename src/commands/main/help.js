@@ -29,7 +29,7 @@ module.exports = {
                     { name: ":books: | Utilidad:", value: "`avatar`, `editsnipe`, `jumbo`, `ping`, `snipe`, `suggestion`" },
                     { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
                     { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
-                    { name: ":gear: | Configuracion:", value: "`setprefix`, `setsuggestion`, `setmute` " },
+                    { name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
                 )
                 .setFooter(`Akane Tsunemori ${process.env.VERSION} | ${prefix}help [comando] para ayuda especifica!`);
             message.channel.send(embed);

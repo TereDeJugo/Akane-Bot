@@ -2,10 +2,10 @@ const db = require("megadb");
 const suggestions = new db.crearDB("suggestions")
 
 module.exports = {
-    name: "setsuggestion",
+    name: "set-suggestions",
     alias: ["setsg", "setsuggestions"],
     description: "Selecciona el canal de sugerencias",
-    usage: "setsuggestion [mencion | id]",
+    usage: "set-suggestions [mencion | id]",
     category: "Configuracion",
     run: (client, message, args) => {
         const channel = message.mentions.channels.first() || message.guild.channels.cache.get(args[0]);

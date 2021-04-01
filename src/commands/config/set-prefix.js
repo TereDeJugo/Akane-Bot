@@ -2,10 +2,10 @@ const db = require("megadb");
 const prefixes = new db.crearDB("prefixes");
 
 module.exports = {
-    name: "setprefix",
-    alias: ["prefix"],
+    name: "set-prefix",
+    alias: ["setprefix"],
     description: "Cambia el prefix de los comandos!",
-    usage: "setprefix <prefix>",
+    usage: "set-prefix <prefix>",
     category: "Configuracion",
     run: (client, message, args) => {
         if (!args[0]) {
