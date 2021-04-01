@@ -1,34 +1,19 @@
 const Discord = require("discord.js");
 
 module.exports = {
-  name: "avatar",
-  alias: ["userimage", "usericon", "icon"],
-  description: "Te muestra tu avatar o el de otro usuario",
-  usage: "avatar [mention]",
-  category: "Utilidad",
-  run: (client, message, args) => {
-    let description;
-    let user = message.mentions.users.first() || message.author;
+    name: "avatar",
+    alias: ["userimage", "usericon", "icon"],
+    description: "Te muestra tu avatar o el de otro usuario",
+    usage: "avatar [mention]",
+    category: "Utilidad",
+    run: (client, message, args) => {
+        let user = message.guild.member(message.mentions.users.first()) || message.guild.members.cache.get(args[0]) || message.member;
 
-    switch (user) {
-      case message.mentions.users.first():
-        {
-          description = `Aqui esta el avatar de ${
-            message.mentions.users.first().username
-          }`;
-        }
-        break;
+        let embed = new Discord.MessageEmbed()
+            .setColor("RANDOM")
+            .setDescription(`Avatar de ${user.user.username}`)
+            .setImage(user.user.displayAvatarURL({ dynamic: true, size: 2048 }));
 
-      case message.author: {
-        description = `Aqui esta tu avatar!`;
-      }
+        message.channel.send(embed);
     }
-
-    let embed = new Discord.MessageEmbed()
-      .setColor("RANDOM")
-      .setDescription(description)
-      .setImage(user.displayAvatarURL({ dynamic: true, size: 2048 }));
-
-    message.channel.send(embed);
-  }
 };
