@@ -10,10 +10,10 @@ module.exports = {
     category: "Principal",
     run: async (client, message, args) => {
         let prefix = process.env.PREFIX;
-        let nsfw_description = `Debes poner ${prefix}help en un canal nsfw para poder ver estos comandos!`;
 
-        if (prefixes.has(message.guild.id)) prefix = await prefixes.get(message.guild.id);
-        if (message.channel.nsfw) nsfw_description = "`rule34`, `hentai`, `trap`, `yuri`, `boobs`, `feet`, `neko`, `kitsune`, `pussy`, `futanari`, `femdom`, `cumsluts`, `holo`";
+        if (prefixes.has(message.guild.id)) {
+            prefix = await prefixes.get(message.guild.id);
+        }
 
         if (!args[0]) {
             const embed = new Discord.MessageEmbed()
@@ -30,23 +30,19 @@ module.exports = {
                     { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
                     { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
                     { name: ":gear: | Configuracion:", value: "`setprefix`, `setsuggestion`, `setmute` " },
-                    { name: ":no_entry: | NSFW:", value: nsfw_description },
                 )
                 .setFooter(`Akane Tsunemori ${process.env.VERSION} | ${prefix}help [comando] para ayuda especifica!`);
             message.channel.send(embed);
         } else {
             let cmd = client.commands.get(args[0].toLowerCase()) || client.aliases.get(args[0].toLowerCase());
             if (cmd) {
-                if(cmd.category == "NSFW") {
-                    return message.channel.send("Debes estar en un canal nsfw para recibir ayuda de este comando!")
-                }
                 const cmd_embed = new Discord.MessageEmbed()
                     .setColor(process.env.COLOR)
                     .addFields(
-                        { name: "Nombre del comando:", value: cmd.name},
+                        { name: "Nombre del comando:", value: cmd.name },
                         { name: "Descripcion:", value: cmd.description },
                         { name: "Uso:", value: `\`\`\`${prefix}${cmd.usage}\`\`\`` })
-                    .setFooter("[] - opcional | <> - obligatorio")    
+                    .setFooter("[] - opcional | <> - obligatorio")
                 if (cmd.alias[0]) {
                     cmd_embed.addFields(
                         { name: "Alias:", value: cmd.alias.join(" | ") });
