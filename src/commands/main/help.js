@@ -23,7 +23,7 @@ module.exports = {
                 .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*\n\n y Yo estoy aqui para protejer la tuya y darte un poco de diversion!`)
                 .addFields(
                     { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
-                    { name: ":bulb: | Principal:", value: "`help`, `invite`" },
+                    { name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`" },
                     { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`" },
                     { name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
                     { name: ":books: | Utilidad:", value: "`avatar`, `editsnipe`, `jumbo`, `ping`, `snipe`, `suggestion`" },
