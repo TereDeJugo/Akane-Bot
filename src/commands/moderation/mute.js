@@ -21,17 +21,14 @@ module.exports = {
 
         if (!role) {
             bot.set(`${message.guild.id}.mute_role`, false);
-            return message.channel.send("El rol de muteado no fue encontrado, vuelva a seleccionarlo con `set-mute`");
-        }
-        if (!args[0]) {
-            return message.channel.send("Mencione o introduzca la id de un usuario para mutear!")
+            return message.channel.send("El rol de muteado no fue encontrado, seleccionelo con `set-mute`");
         }
 
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         let reason = args.splice(1).join(" ");
 
         if (!user) {
-            return message.channel.send("No encuentro a ese usario por ninguna parte de la base de datos.")
+            return message.channel.send("Mencione a un usuario o introduzca su id")
         }
 
         if (user.id == message.author.id) {

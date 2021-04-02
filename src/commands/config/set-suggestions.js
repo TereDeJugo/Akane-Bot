@@ -1,5 +1,5 @@
 const db = require("megadb");
-const suggestions = new db.crearDB("suggestions")
+const bot = new db.crearDB("bot_data");
 
 module.exports = {
     name: "set-suggestions",
@@ -13,7 +13,7 @@ module.exports = {
         if (!channel) {
             return message.channel.send("Debes mencionar un canal valido o la id de uno!");
         } else {
-            suggestions.set(message.guild.id, channel.id)
+            bot.set(`${message.guild.id}.suggestion`, channel.id)
             message.channel.send(`He guardado ${channel} como el nuevo canal de sugerencias!`);
         }
     }

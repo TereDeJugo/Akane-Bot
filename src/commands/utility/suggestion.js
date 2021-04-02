@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const db = require("megadb");
-const suggestions = new db.crearDB("suggestions");
+const bot = new db.crearDB("bot_data");
 
 module.exports = {
     name: "suggestion",
@@ -12,23 +12,25 @@ module.exports = {
         if (!args[0]) {
             return message.channel.send("Dime una sugerencia que quieras enviar!");
         }
-        if (!suggestions.has(message.guild.id)) {
-            return message.channel.send("El canal de sugerencias no esta definido");
+
+        channel_db = await bot.get(`${message.guild.id}.suggestion`);
+        channel = message.guild.channels.cache.get(channel_db);
+
+        if (!channel) {
+            return message.channel.send("El canal de sugerencias no fue encontrado, seleccionelo con `set-suggestion`");
+        }
+
+        let embed = new Discord.MessageEmbed()
+            .setAuthor(`Sugerencia de ${message.author.tag}`, `${message.author.displayAvatarURL({ dynamic: true })}`)
+            .setColor("RANDOM")
+            .setDescription(args.join(" "))
+            .setTimestamp();
+
+        if (message.guild.me.hasPermission("MANAGE_MESSAGE")) {
+            message.delete()
+            channel.send(embed)
         } else {
-            message.delete();
-            let channel_db = await suggestions.get(message.guild.id);
-            let channel = message.guild.channels.cache.get(channel_db);
-
-            let embed = new Discord.MessageEmbed()
-                .setAuthor(
-                    `Sugerencia de ${message.author.tag}`,
-                    `${message.author.displayAvatarURL({ dynamic: true })}`
-                )
-                .setColor("RANDOM")
-                .setDescription(args.join(" "))
-                .setTimestamp();
-
-            channel.send(embed);
+            channel.send(embed)
         }
     }
 };
