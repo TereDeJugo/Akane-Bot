@@ -3,7 +3,7 @@ const bot = new db.crearDB("bot_data");
 const invites = new db.crearDB("invites");
 
 module.exports = async (client, message) => {
-    if (message.channel.type == "dm") {
+    if (message.channel.type == "dm" ) {
         return;
     }
 
