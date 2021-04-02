@@ -1,6 +1,6 @@
 const Discord = require("discord.js")
 const db = require("megadb");
-const mutes = new db.crearDB("mutes");
+const bot = new db.crearDB("bot_data")
 
 module.exports = {
     name: "unmute",
@@ -9,9 +9,6 @@ module.exports = {
     usage: "unmute <mencion | id>",
     category: "Moderacion",
     run: async (client, message, args) => {
-        if (!mutes.has(message.guild.id)) {
-            return message.channel.send("No hay un rol de silenciado definido, definalo con `semute`")
-        }
         if (!message.member.hasPermission("MUTE_MEMBERS")) {
             return message.channel.send("Ey, no veo tus permisos para silenc:iar usuarios")
         } 
@@ -19,22 +16,31 @@ module.exports = {
             return message.channel.send("Lo siento... No tengo los permisos para administrar roles")
         }
 
+        let role_db = await bot.get(`${message.guild.id}.mute_role`);
+        let role = await message.guild.roles.cache.get(role_db);
+
+        if (!role) {
+            bot.set(`${message.guild.id}.mute_role`, false);
+            return message.channel.send("El rol de muteado no fue encontrado, vuelva a seleccionarlo con `set-mute`");
+        }
+        if (!args[0]) {
+            return message.channel.send("Mencione o introduzca la id de un usuario para desmutear!");
+        }
+
         let user = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
-        let role = await mutes.get(message.guild.id)
-        let mute_role = await message.guild.roles.cache.get(role)
 
         if (!user) {
-            return message.channel.send("No encuentro a ese usario por ninguna parte de la base de datos.")
+            return message.channel.send("No encuentro a ese usario por ninguna parte.")
         }
         if (!user.bannable) {
-            return message.channel.send("No puedo dessilenciar a alguien con mayor rol que el mio.")
+            return message.channel.send("No puedo desmutear a alguien con mayor rol que el mio.")
         } 
         if (!user.roles.cache.has(role)) {
-            return message.channel.send("Este usuario no esta silenciado.")
+            return message.channel.send("Este usuario no esta muteado.")
         }
         
-        user.roles.remove(role).then(x => {
-            return message.channel.send("Usuario desilenciado!")
+        user.roles.remove(role).then( () => {
+            return message.channel.send("Usuario desmuteado!")
         })
     }
 }
