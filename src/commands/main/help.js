@@ -16,7 +16,7 @@ module.exports = {
                 .setColor(process.env.COLOR)
                 .setTitle("Centro de Ayuda de Akane Bot!")
                 .setImage("https://pa1.narvii.com/6158/5db62d69ceadfc8cd9aa7740c3a09a1cf2cff2ea_hq.gif")
-                .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*\n\n y Yo estoy aqui para protejer la tuya y darte un poco de diversion!`)
+                .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*\n\n y Yo estoy aqui para protejer la tuya y darte un poco de diversion!\n`)
                 .addFields(
                     { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
                     { name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`" },

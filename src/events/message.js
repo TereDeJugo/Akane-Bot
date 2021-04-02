@@ -3,6 +3,10 @@ const bot = new db.crearDB("bot_data");
 const invites = new db.crearDB("invites");
 
 module.exports = async (client, message) => {
+    if (message.channel.type == "dm") {
+        return;
+    }
+
     let prefix = await bot.get(`${message.guild.id}.prefix`);
 
     if (invites.has(message.guild.id) && !message.member.hasPermission("ADMINISTRATOR")) {
