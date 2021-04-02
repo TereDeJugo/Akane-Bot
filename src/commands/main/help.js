@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 const db = require("megadb");
-const prefixes = new db.crearDB("prefixes");
+const bot = new db.crearDB("bot_data")
 
 module.exports = {
     name: "help",
@@ -9,11 +9,7 @@ module.exports = {
     usage: "help",
     category: "Principal",
     run: async (client, message, args) => {
-        let prefix = process.env.PREFIX;
-
-        if (prefixes.has(message.guild.id)) {
-            prefix = await prefixes.get(message.guild.id);
-        }
+        let prefix = await bot.get(`${message.guild.id}.prefix`);
 
         if (!args[0]) {
             const embed = new Discord.MessageEmbed()

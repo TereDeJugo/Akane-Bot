@@ -1,5 +1,5 @@
 const db = require("megadb");
-const prefixes = new db.crearDB("prefixes");
+const bot = new db.crearDB("bot_data");
 
 module.exports = {
     name: "set-prefix",
@@ -11,7 +11,7 @@ module.exports = {
         if (!args[0]) {
             return message.channel.send("Dime, ¿a que prefix quieres que cambie?");
         } else {
-            prefixes.set(message.guild.id, args[0]);
+            bot.set(`${message.guild.id}.prefix`, args[0]);
             return message.channel.send(`He guardado mi nuevo prefix: **${args[0]}**`)
         }
     }

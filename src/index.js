@@ -58,4 +58,4 @@ for (const file of fs.readdirSync(__dirname + "/events")) {
 
 // Login with Token
 
-client.login(process.env.TOKEN); 
+client.login(process.env.TOKEN);

@@ -1,10 +1,9 @@
 const db = require("megadb");
-const prefixes = new db.crearDB("prefixes");
+const bot = new db.crearDB("bot_data");
 const invites = new db.crearDB("invites");
 
 module.exports = async (client, message) => {
-    let prefix = process.env.PREFIX
-    if (prefixes.has(message.guild.id)) prefix = await prefixes.get(message.guild.id);
+    let prefix = await bot.get(`${message.guild.id}.prefix`);
 
     if (invites.has(message.guild.id) && !message.member.hasPermission("ADMINISTRATOR")) {
         channels = await invites.get(message.guild.id);
@@ -31,21 +30,21 @@ module.exports = async (client, message) => {
         }
     }
 
-if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-let args = message.content.slice(prefix.length).split(/ +/);
-let command = args.shift().toLowerCase();
+    let args = message.content.slice(prefix.length).split(/ +/);
+    let command = args.shift().toLowerCase();
 
-let cmd = client.commands.get(command) || client.aliases.get(command);
-if (!cmd) return;
+    let cmd = client.commands.get(command) || client.aliases.get(command);
+    if (!cmd) return;
 
-if (cmd.category == "NSFW" && !message.channel.nsfw) {
-    return message.channel.send("No puedes usar este comando si no estas en un canal **nsfw**")
-}
-if (cmd.category == "Configuracion" && !message.member.hasPermission("ADMINISTRATOR")) {
-    return message.channel.send("No veo tus permisos de administrador para usar este comando.")
-}
+    if (cmd.category == "NSFW" && !message.channel.nsfw) {
+        return message.channel.send("No puedes usar este comando si no estas en un canal **nsfw**")
+    }
+    if (cmd.category == "Configuracion" && !message.member.hasPermission("ADMINISTRATOR")) {
+        return message.channel.send("No veo tus permisos de administrador para usar este comando.")
+    }
 
-cmd.run(client, message, args);
+    cmd.run(client, message, args);
 
 };
