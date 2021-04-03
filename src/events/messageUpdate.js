@@ -3,7 +3,9 @@ const editsnipes = new db.crearDB("editsnipes");
 
 module.exports = async (client, oldMessage, newMessage) => {
 
-    if (oldMessage.author.bot) return;
+    if (!oldMessage.content) {
+        return;
+    }
 
     editsnipes.set(oldMessage.channel.id, {
         old_content: oldMessage.content,

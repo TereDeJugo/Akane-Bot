@@ -1,6 +1,9 @@
+// Require packages
+
 const db = require("megadb");
 const bot = new db.crearDB("bot_data");
 const invites = new db.crearDB("invites");
+const cooldowns = new db.crearDB("cooldowns");
 
 module.exports = async (client, message) => {
     if (message.channel.type == "dm" ) {
@@ -8,6 +11,8 @@ module.exports = async (client, message) => {
     }
 
     let prefix = await bot.get(`${message.guild.id}.prefix`);
+
+    // Anti invites verify
 
     if (invites.has(message.guild.id) && !message.member.hasPermission("ADMINISTRATOR")) {
         channels = await invites.get(message.guild.id);
@@ -42,13 +47,28 @@ module.exports = async (client, message) => {
     let cmd = client.commands.get(command) || client.aliases.get(command);
     if (!cmd) return;
 
-    if (cmd.category == "NSFW" && !message.channel.nsfw) {
-        return message.channel.send("No puedes usar este comando si no estas en un canal **nsfw**")
+    if (cooldowns.has(message.guild.id)) {
+        let cool = await cooldowns.get(message.guild.id);
+        if(cool.includes(message.author.id)) {
+            return message.channel.send("Debes esperar almenos unos segundos para usar otro comando!");
+        }
     }
     if (cmd.category == "Configuracion" && !message.member.hasPermission("ADMINISTRATOR")) {
         return message.channel.send("No veo tus permisos de administrador para usar este comando.")
     }
 
+
     cmd.run(client, message, args);
 
+    // Cooldown Verification.
+
+    if(!cooldowns.has(message.guild.id)) {
+        cooldowns.set(message.guild.id, [])
+    }
+
+    cooldowns.push(message.guild.id, message.author.id);
+
+    setTimeout(() => {
+        cooldowns.delete(message.guild.id)
+    }, 10000) 
 };
