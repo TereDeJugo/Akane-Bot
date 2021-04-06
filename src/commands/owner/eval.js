@@ -4,7 +4,7 @@ module.exports = {
   name: "eval",
   alias: ["evalue"],
   description: "Evalua un comando",
-  run: (client, message, args) => {
+  run: async (client, message, args) => {
     
     if (message.author.id !== "572780426171777032") return message.channel.send("Solo mi creadora puede usar este comando!");
    

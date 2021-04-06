@@ -70,5 +70,5 @@ module.exports = async (client, message) => {
 
     setTimeout(() => {
         cooldowns.delete(message.guild.id)
-    }, 10000) 
+    }, 5000) 
 };
