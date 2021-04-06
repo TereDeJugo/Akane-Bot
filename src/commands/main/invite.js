@@ -12,9 +12,9 @@ module.exports = {
             .setAuthor("Muchas Gracias por invitarme a tu Servidor!")
             .setImage("https://i.pinimg.com/originals/38/d4/69/38d46918b66e08a2672450a3e62d085d.gif")
             .addFields(
-                { name: ":star: | Invitacion del Bot", value: `[Gracias de nuevo!](${process.env.INVITE})` },
-                { name: ":bulb: | Servidor de Soporte", value: `[Te ayudaran lo antes posible!](${process.env.SERVER})` })
-            .setFooter(`Mi owner: ${process.env.OWNER}`);
+                { name: ":star: | Invitacion del Bot", value: `[Gracias de nuevo!](https://discord.com/oauth2/authorize?client_id=822200902475710585&scope=bot&permissions=8)` },
+                { name: ":bulb: | Servidor de Soporte", value: `[Te ayudaran lo antes posible!](https://discord.gg/xrbakhHVjJ)` })
+            .setFooter(`Mi owner: Tere De Jugo #6455`);
         message.channel.send(embed);
     }
 };

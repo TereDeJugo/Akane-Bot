@@ -20,6 +20,33 @@ Programacion & Hosting en: [Replit](https://replit.com/)
 
 ## Te gusta?
 
+Dale una estrella!
+
 Visitalo en top.gg para una descripcion mas amigable. (Recuerda votar!)
 
 [![Discord Bots](https://top.gg/api/widget/822200902475710585.svg)](https://top.gg/bot/822200902475710585)
+
+## Contruir y Ejecutar 
+
+Primero, debes descarga e instalar [NodeJS](https://nodejs.org/en/download/)
+
+Empieza el proyecto 
+
+```
+npm init -y
+```
+
+Instala los paquetes
+
+```
+npm install discord.js megadb dotenv 
+```
+
+Y ya puedes empezar a usar Akane Bot, solo debes crear un archivo `.env` y colocar los siguientes valores:
+
+```.env
+Token=Token_De_Tu_App
+Color=Color_De_Embeds
+````
+
+Si usas Replit, puede ir a el [Proyecto de Akane](https://replit.com/@TJDV/Akane-Bot), y hacerle Fork, y ya tendras todo instalado, solo te faltara hacer el archivo `.env`!

@@ -27,7 +27,7 @@ module.exports = {
                     { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
                     { name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
                 )
-                .setFooter(`Akane Tsunemori ${process.env.VERSION} | ${prefix}help [comando] para ayuda especifica!`);
+                .setFooter(`Akane Tsunemori Bot 1.5.7 | ${prefix}help [comando] para ayuda especifica!`);
             message.channel.send(embed);
         } else {
             let cmd = client.commands.get(args[0].toLowerCase()) || client.aliases.get(args[0].toLowerCase());
