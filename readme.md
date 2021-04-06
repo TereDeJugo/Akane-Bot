@@ -20,6 +20,6 @@ Programacion & Hosting en: [Replit](https://replit.com/)
 
 ## Te gusta?
 
-Visitalo en top.gg para una descripcion mas amigable. (Recuerda cotar!)
+Visitalo en top.gg para una descripcion mas amigable. (Recuerda votar!)
 
 [![Discord Bots](https://top.gg/api/widget/822200902475710585.svg)](https://top.gg/bot/822200902475710585)
