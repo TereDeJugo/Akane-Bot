@@ -1,32 +1,32 @@
 # Akane Bot 
 
-Es un bot multiproposito 100% en español con el cual puedes realizar varias cosas, es sencillo de usar y rapido.
+Multiporpose Discord bot in spanish and english (working)
 
-- Multifuncional
-- +30 Comandos 
-- Costante Actualizacion
+- Multiporpose
+- +30 Commands 
+- Constant updates
 - Open Source
-- Base de datos en JSON
+- JSON Database
 
 <img src="https://pa1.narvii.com/6530/3a4572bab7b60e11f20d6927178f8ca7497e05b8_hq.gif"/>
 
-## Creado en
+## Made With
 
-Programacion & Hosting en: [Replit](https://replit.com/)
+Code & Host in: [Replit](https://replit.com/)
 
-### Dependencias
+### Dependencies
 - [discord.js](https://discord.js.org/#/)
 - [megadb](https://npmjs.com/package/megadb)
 
-## Te gusta?
+## You Like?
 
-Dale una estrella!
+Give it a star, Fork it and Use!
 
-Visitalo en top.gg para una descripcion mas amigable. (Recuerda votar!)
+[Vote in Top.gg](https://top.gg/bot/822200902475710585/vote)
 
 [![Discord Bots](https://top.gg/api/widget/822200902475710585.svg)](https://top.gg/bot/822200902475710585)
 
-## Contruir y Ejecutar 
+## Build
 db.list("prefix").then(matches => {});
 
 Primero, debes descarga e instalar [NodeJS](https://nodejs.org/en/download/)
