@@ -9,8 +9,6 @@ Es un bot multiproposito 100% en español con el cual puedes realizar varias cos
 - Base de datos en JSON
 
 <img src="https://pa1.narvii.com/6530/3a4572bab7b60e11f20d6927178f8ca7497e05b8_hq.gif"/>
-[![](https://top.gg/api/widget/status/822200902475710585.svg?noavatar=true)](https://top.gg/bot/822200902475710585)
-[![](https://top.gg/api/widget/owner/822200902475710585.svg?noavatar=true)](https://top.gg/bot/822200902475710585)
 
 ## Creado en
 
