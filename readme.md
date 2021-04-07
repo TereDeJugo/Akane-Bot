@@ -49,4 +49,4 @@ Token=Token
 Color=Embed_Color
 ````
 
-If you use Replit, you can go to the [Akane Project] (https://replit.com/@TJDV/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !
+If you use Replit, you can go to the [Akane Project](https://replit.com/@TJDV/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !
