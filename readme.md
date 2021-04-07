@@ -27,27 +27,26 @@ Give it a star, Fork it and Use!
 [![Discord Bots](https://top.gg/api/widget/822200902475710585.svg)](https://top.gg/bot/822200902475710585)
 
 ## Build
-db.list("prefix").then(matches => {});
 
-Primero, debes descarga e instalar [NodeJS](https://nodejs.org/en/download/)
+First, download and install [NodeJS](https://nodejs.org/en/download/)
 
-Empieza el proyecto 
+Start the node project: 
 
 ```
 npm init -y
 ```
 
-Instala los paquetes
+Install the packages
 
 ```
 npm install discord.js megadb dotenv 
 ```
 
-Y ya puedes empezar a usar Akane Bot, solo debes crear un archivo `.env` y colocar los siguientes valores:
+And you can start using Akane Bot, you just have to create a `.env` file and put the following values:
 
 ```.env
-Token=Token_De_Tu_App
-Color=Color_De_Embeds
+Token=Token
+Color=Embed_Color
 ````
 
-Si usas Replit, puede ir a el [Proyecto de Akane](https://replit.com/@TJDV/Akane-Bot), y hacerle Fork, y ya tendras todo instalado, solo te faltara hacer el archivo `.env`!
+If you use Replit, you can go to the [Akane Project] (https://replit.com/@TJDV/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !
