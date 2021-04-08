@@ -57,3 +57,12 @@ module.exports = {
         }
     }
 }
+
+module.exports.help = {
+    name: "anti-invites",
+    alias: ["antiinvites"],
+    perms: [],
+    description: "Activa o Desactiva las invitaciones del servidor",
+    usage: "anti-invites <on | off>",
+    category: "Config"
+}

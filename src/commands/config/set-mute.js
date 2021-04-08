@@ -19,3 +19,12 @@ module.exports = {
         }
     }
 }
+
+module.exports.help = {
+    name: "set-mute",
+    alias: ["set-muterole", "setmute"],
+    perms: [],
+    description: "Selecciona el rol que se usara para silenciar",
+    usage: "set-mute <mencion | id>",
+    category: "Config"
+}

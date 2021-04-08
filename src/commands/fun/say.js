@@ -26,3 +26,12 @@ module.exports = {
         }
     }
 }
+
+module.exports.help = {
+    name: "say",
+    alias: [],
+    perms: [],
+    category: "Diversion",
+    description: "Haz que Akane diga lo que quieras!",
+    usage: "say <texto>",
+}

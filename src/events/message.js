@@ -6,7 +6,7 @@ const invites = new db.crearDB("invites");
 const cooldowns = new db.crearDB("cooldowns");
 
 module.exports = async (client, message) => {
-    if (message.channel.type == "dm" ) {
+    if (message.channel.type == "dm" || !message.guild.me.hasPermission("SEND_MESSAGES")) {
         return;
     }
 
@@ -47,9 +47,26 @@ module.exports = async (client, message) => {
     let cmd = client.commands.get(command) || client.aliases.get(command);
     if (!cmd) return;
 
+    // Verify perms
+
+    /* const perms = cmd.help.perms;
+
+    if (perms) {
+        perms.forEach(p => {
+            let perm = message.guild.me.hasPermission(p)
+
+            if (!perm) {
+                return message.channel.send("Lo siento, no tengo los permisos suficientes para ejecutar este comando!")
+            }
+        })
+    }
+    */
+
+    // Verify cooldown
+
     if (cooldowns.has(message.guild.id)) {
         let cool = await cooldowns.get(message.guild.id);
-        if(cool.includes(message.author.id)) {
+        if (cool.includes(message.author.id)) {
             return message.channel.send("Debes esperar almenos unos segundos para usar otro comando!");
         }
     }
@@ -62,7 +79,7 @@ module.exports = async (client, message) => {
 
     // Cooldown Verification.
 
-    if(!cooldowns.has(message.guild.id)) {
+    if (!cooldowns.has(message.guild.id)) {
         cooldowns.set(message.guild.id, [])
     }
 
@@ -70,5 +87,5 @@ module.exports = async (client, message) => {
 
     setTimeout(() => {
         cooldowns.delete(message.guild.id)
-    }, 5000) 
+    }, 5000)
 };
