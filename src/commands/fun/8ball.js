@@ -7,7 +7,7 @@ module.exports = {
     usage: "8ball <pregunta>",
     category: "Diversion",
     run: async (client, message, args) => {
-        const res = await client.rdm("src/json/8ball.json");
+        const res = await client.randomJSON("src/json/8ball.json");
 
         if (!args[0]) {
             return message.channel.send("Dime una pregunta!");
@@ -28,7 +28,7 @@ module.exports = {
 module.exports.help = {
     name: "8ball",
     alias: [],
-    perms = [],
+    perms: [],
     description: "Akane te respondera a tu pregunta...",
     usage: "8ball <pregunta>",
     category: "Diversion"

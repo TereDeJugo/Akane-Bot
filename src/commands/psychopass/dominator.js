@@ -7,7 +7,7 @@ module.exports = {
     usage: "dominator <mencion | id>",
     category: "PsychoPass",
     run: async (client, message, args) => {
-        let res = await client.rdm("src/json/dominator.json");
+        let res = await client.randomJSON("src/json/dominator.json");
 
         let int_random = Math.floor(Math.random() * 400 + 1);
         let user = message.mentions.users.first() || message.guild.members.cache.get(args[0]).user;
