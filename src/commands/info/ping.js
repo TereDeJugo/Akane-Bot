@@ -17,4 +17,12 @@ module.exports = {
         });
     }
 };
- 
+
+module.exports.help = {
+    name: "ping",
+    alias: ["p"],
+    perms: [],
+    description: "Te muestro mi ping, ¡Este es mi primer comando!",
+    usage: "ping",
+    category: "Info"
+}; 

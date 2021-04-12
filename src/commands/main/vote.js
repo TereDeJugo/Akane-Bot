@@ -16,3 +16,12 @@ module.exports = {
 
         return message.channel.send(embed)
     }}
+
+module.exports.help = {
+    name: "vote",
+    alias: ["topgg"],
+    perms: [],
+    description: "Vota por mi en top.gg!",
+    usage: "vote",
+    category: "Principal"
+};    

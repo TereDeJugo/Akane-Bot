@@ -33,3 +33,12 @@ module.exports = {
         message.channel.send(embed);
     }
 };
+
+module.exports.help = {
+    name: "channel-info",
+    alias: ["ch-info", "channelinfo", "chinfo"],
+    perms: [],
+    description: "Te mostrare informacion del canal!",
+    usage: "channel-info <mencion | id>",
+    category: "Info"
+}

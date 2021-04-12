@@ -18,3 +18,12 @@ module.exports = {
         message.channel.send(embed);
     }
 };
+
+module.exports.help = {
+    name: "invite",
+    alias: [],
+    perms: [],
+    description: "Te muestro mis links de invitacion y de mi servidor de soporte.",
+    usage: "invite",
+    category: "Main"
+}

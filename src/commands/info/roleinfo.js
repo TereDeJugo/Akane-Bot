@@ -25,3 +25,12 @@ module.exports = {
         message.channel.send(embed);
     }
 };
+
+module.exports.help = {
+    name: "role-info",
+    alias: ["role", "roleinfo"],
+    perms: [],
+    description: "Ve la informacion de un rol del servidor",
+    usage: "roleinfo <mencion | id>",
+    category: "Info"
+};

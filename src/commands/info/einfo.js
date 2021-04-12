@@ -27,3 +27,12 @@ module.exports = {
         message.channel.send(embed)
     }
 };
+
+module.exports.help = {
+    name: "e-info",
+    alias: ["emoji-info", "emoji", "emote", "einfo"],
+    persm: [],
+    description: "Ve la informacion de un emote del servidor",
+    usage: "e-info <emote>",
+    category: "Info"
+}

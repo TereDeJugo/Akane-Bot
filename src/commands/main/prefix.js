@@ -12,3 +12,12 @@ module.exports = {
 
         message.channel.send(`Mi prefix es: **${prefix}**, puedes cambiarlo con ${prefix}set-prefix`)
     }}
+
+module.exports.help = {
+    name: "prefix",
+    alias: [],
+    perms: [],
+    description: "Te muestro mi prefix actual!",
+    usage: "prefix",
+    category: "Main",
+}

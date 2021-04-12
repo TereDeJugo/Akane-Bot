@@ -56,3 +56,12 @@ module.exports = {
         message.channel.send(embed);
     }
 };
+
+module.exports.help = {
+    name: "sv-info",
+    alias: ["server", "serverinfo"],
+    perms: [],
+    description: "Consulta la informacion del servidor",
+    usage: "serverinfo",
+    category: "Info"
+};
