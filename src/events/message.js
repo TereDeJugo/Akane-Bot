@@ -4,11 +4,16 @@ const db = require("megadb");
 const bot = new db.crearDB("bot_data");
 const invites = new db.crearDB("invites");
 const cooldowns = new db.crearDB("cooldowns");
+const { bot_default } = require("../modules/util.js");
 
 module.exports = async (client, message) => {
     if (message.channel.type == "dm" || !message.guild.me.hasPermission("SEND_MESSAGES")) {
         return;
     }
+
+    if(!bot.has(message.guild.id)) {
+        bot.set(message.guild.id, bot_default)
+    }  
 
     let prefix = await bot.get(`${message.guild.id}.prefix`);
 

@@ -6,10 +6,8 @@ const fs = require("fs");
 // Discord Client config
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
-client.commands = new Discord.Collection();
-client.aliases = new Discord.Collection();
 
-require("./util.js")(client)
+require("./modules/client.js")(Discord, client)
 
 const dirs = [
     __dirname + "/commands/main",

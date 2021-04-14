@@ -1,4 +1,4 @@
-const { bot_default } = require("../util.js");
+const { bot_default } = require("../modules/util.js");
 const db = require("megadb");
 const bot = new db.crearDB("bot_data");
 
