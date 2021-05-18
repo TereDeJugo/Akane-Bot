@@ -16,6 +16,7 @@ const dirs = [
     __dirname + "/commands/fun",
     __dirname + "/commands/moderation",
     __dirname + "/commands/psychopass",
+    __dirname + "/commands/reaction",
     __dirname + "/commands/utility",
     __dirname + "/commands/owner",
 ];

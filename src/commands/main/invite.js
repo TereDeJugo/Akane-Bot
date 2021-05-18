@@ -14,7 +14,7 @@ module.exports = {
             .addFields(
                 { name: ":star: | Invitacion del Bot", value: `[Gracias de nuevo!](https://discord.com/oauth2/authorize?client_id=822200902475710585&scope=bot&permissions=8)` },
                 { name: ":bulb: | Servidor de Soporte", value: `[Te ayudaran lo antes posible!](https://discord.gg/xrbakhHVjJ)` })
-            .setFooter(`Mi owner: Tere De Jugo #6455`);
+            .setFooter(`Mi owner: Love and Juice Below#1223`);
         message.channel.send(embed);
     }
 };

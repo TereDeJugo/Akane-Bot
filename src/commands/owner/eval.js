@@ -6,7 +6,7 @@ module.exports = {
   description: "Evalua un comando",
   run: async (client, message, args) => {
     
-    if (message.author.id !== "572780426171777032") return message.channel.send("Solo mi creadora puede usar este comando!");
+    if (message.author.id !== "632319035102462004") return message.channel.send("Solo mi owner puede usar este comando!");
    
     try {
         if(!args.join(" ")) return message.channel.send('Que quieres evaluar Tere?') 
