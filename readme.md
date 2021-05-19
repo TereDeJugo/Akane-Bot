@@ -1,12 +1,13 @@
 # Akane Bot 
 
-Multiporpose Discord bot in spanish and english (working)
+Multiporpose Discord bot in spanish 
 
 - Multiporpose
-- +30 Commands 
+- +40 Commands 
 - Constant updates
 - Open Source
 - JSON Database
+- Gifs from Giphy and Imgur
 
 <img src="https://pa1.narvii.com/6530/3a4572bab7b60e11f20d6927178f8ca7497e05b8_hq.gif"/>
 
@@ -17,6 +18,7 @@ Code & Host in: [Replit](https://replit.com/)
 ### Dependencies
 - [discord.js](https://discord.js.org/#/)
 - [megadb](https://npmjs.com/package/megadb)
+- [moment.js](https://npmjs.com/package/moment)
 
 ## You Like?
 
