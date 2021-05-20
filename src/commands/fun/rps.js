@@ -1,6 +1,7 @@
 module.exports = {
     name: "rps",
     alias: ["ppt"],
+    perms: [],
     description: "Juega a piedra papel o tijeras junto a Akane!",
     usage: "rps <piedra | papel | tijeras>",
     category: "Diversion",
@@ -39,13 +40,3 @@ module.exports = {
         }
     }
 };
-
-
-module.exports.help = {
-    name: "rps",
-    alias: ["ppt"],
-    perms: [],
-    description: "Juega a piedra papel o tijeras junto a Akane!",
-    usage: "rps <piedra | papel | tijeras>",
-    category: "Diversion"
-}

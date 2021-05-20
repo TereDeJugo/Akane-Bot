@@ -2,8 +2,11 @@
 
 const db = require("megadb");
 const bot = new db.crearDB("bot_data");
+
 const invites = new db.crearDB("invites");
 const cooldowns = new db.crearDB("cooldowns");
+const currency = new db.crearDB("currency");
+
 const { bot_default } = require("../modules/util.js");
 
 module.exports = async (client, message) => {
@@ -11,9 +14,9 @@ module.exports = async (client, message) => {
         return;
     }
 
-    if(!bot.has(message.guild.id)) {
+    if (!bot.has(message.guild.id)) {
         bot.set(message.guild.id, bot_default)
-    }  
+    }
 
     let prefix = await bot.get(`${message.guild.id}.prefix`);
 
@@ -42,6 +45,34 @@ module.exports = async (client, message) => {
                 }
             }
         }
+    }
+
+     if(message.author.bot) return;
+
+    // Verify currency
+
+    if(currency.has(message.author.id)) {
+        const xpForAdd = Math.floor(Math.random() * 5) + 1;
+        
+        const userDB = await currency.get(message.author.id);
+        const levelUp = 5 * userDB.level + 50 * userDB.level;
+
+        if(message.content.length >= 12) {
+            currency.add(`${message.author.id}.xp`, xpForAdd);
+
+            newUserXP = currency.get(`${message.author.id}.xp`)
+            
+            if(userDB.xp >= levelUp) {
+                message.channel.send(`Felicidades! has subido de nivel, ahora eres nivel ${userDB.level + 1}`);
+                currency.add(`${message.author.id}.level`, 1);
+            }
+        }        
+    } else {       
+        currency.set(message.author.id, {
+            xp: 0,
+            level: 1,
+            description: "Las personas protegemos la ley"
+        })
     }
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;

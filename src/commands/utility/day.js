@@ -11,11 +11,11 @@ module.exports = {
         const dates = {
             "Monday": ["Lunes", "https://imgur.com/7VEjsDc.png"],
             "Tuesday": ["Martes", "https://imgur.com/w22DNYc.png"],
-            "Wednesday": ["Miercoles", "https://imgur.com/paYKlCv.png"],
-            "Thursday": ["Jueves", "https://imgur.com/NER6v79.png"],
-            "Friday": ["Viernes", "https://imgur.com/AnMY9sL.png"],
-            "Saturday": ["Sabado", "https://imgur.com/kPWyhRA.png"],
-            "Sunday": ["Domingo", "https://imgur.com/cWYnSto.png"]
+            "Wednesday": ["Miercoles", "https://imgur.com/NLcW1o2.png"],
+            "Thursday": ["Jueves", "https://imgur.com/mepLCui.png"],
+            "Friday": ["Viernes", "https://imgur.com/YaeHCfs.png"],
+            "Saturday": ["Sabado", "https://imgur.com/xiIxM2o.png"],
+            "Sunday": ["Domingo", "https://imgur.com/vAEiSGk.png"]
         }     
 
         const date = moment();

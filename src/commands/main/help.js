@@ -18,15 +18,16 @@ module.exports = {
                 .setImage("https://pa1.narvii.com/6158/5db62d69ceadfc8cd9aa7740c3a09a1cf2cff2ea_hq.gif")
                 .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*\n\n y Yo estoy aqui para protejer la tuya y darte un poco de diversion!\n`)
                 .addFields(
-                    { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
-                    { name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`, `vote`" },
-                    { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`, `daily`" },
-                    { name: ":nazar_amulet: | Reaccion:", value: "`kiss`, `hug`, `dance`, `pose`, `chad`, `chora`, `salty`, `elegant`" },
-                    { name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
-                    { name: ":books: | Utilidad:", value: "`avatar`, `day`, `editsnipe`, `jumbo`, `ping`, `server-icon`, `snipe`, `suggestion`" },
-                    { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
-                    { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
-                    { name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
+                    {name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
+                    {name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`, `vote`" },
+                    {name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`, `daily`" },
+                    {name: ":nazar_amulet: | Reaccion:", value: "`kiss`, `hug`, `dance`, `pose`, `chad`, `chora`, `salty`, `elegant`" },
+                    {name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
+                    {name: ":books: | Utilidad:", value: "`avatar`, `day`, `editsnipe`, `jumbo`, `ping`, `server-icon`, `snipe`, `suggestion`" },
+                    {name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
+                    {name: ":coin: | Economia:", value: "`profile`, `set-description`"}, 
+                    {name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
+                    {name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
                 )
                 .setFooter(`Akane Tsunemori Bot 1.5.9 | ${prefix}help [comando] para ayuda especifica!`);
             message.channel.send(embed);

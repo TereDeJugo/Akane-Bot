@@ -13,6 +13,7 @@ const dirs = [
     __dirname + "/commands/main",
     __dirname + "/commands/info",
     __dirname + "/commands/config",
+    __dirname + "/commands/currency",
     __dirname + "/commands/fun",
     __dirname + "/commands/moderation",
     __dirname + "/commands/psychopass",

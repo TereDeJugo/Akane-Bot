@@ -3,8 +3,9 @@ const Discord = require("discord.js");
 module.exports = {
     name: "say",
     alias: [],
+    perms: [],
     category: "Diversion",
-    description: "Haz que Akane diga lo que quieras!",
+    description: "Dire lo que quieras.",
     usage: "say <texto>",
     run: (client, message, args) => {
         let newargs;
@@ -12,6 +13,7 @@ module.exports = {
         if (!args[0]) {
             return message.channel.send("Ingresa el texto que quieras que diga...");
         }
+
         if (message.member.hasPermission("ADMINISTRATOR")) {
             newargs = args.join(" ")
         } else {
@@ -25,13 +27,4 @@ module.exports = {
             return message.channel.send(newargs);
         }
     }
-}
-
-module.exports.help = {
-    name: "say",
-    alias: [],
-    perms: [],
-    category: "Diversion",
-    description: "Haz que Akane diga lo que quieras!",
-    usage: "say <texto>",
 }

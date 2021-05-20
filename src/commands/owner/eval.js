@@ -5,7 +5,7 @@ module.exports = {
     alias: ["evalue"],
     description: "Evalua un comando",
     category: "Owner",
-    usage: "usage [script a evaluar]",
+    usage: "eval [script a evaluar]",
     run: async (client, message, args) => {
         try {
             if (!args.join(" ")) return message.channel.send('Que quieres evaluar LajBel?')
