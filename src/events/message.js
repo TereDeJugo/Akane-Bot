@@ -75,8 +75,13 @@ module.exports = async (client, message) => {
             return message.channel.send("Debes esperar almenos unos segundos para usar otro comando!");
         }
     }
+
     if (cmd.category == "Configuracion" && !message.member.hasPermission("ADMINISTRATOR")) {
         return message.channel.send("No veo tus permisos de administrador para usar este comando.")
+    }
+
+    if (cmd.category == "Owner" && message.author.id != "632319035102462004") {
+        return message.channel.send("Solo mi owner puede usar este comando!")
     }
 
 

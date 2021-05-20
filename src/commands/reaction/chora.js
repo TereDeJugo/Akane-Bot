@@ -4,7 +4,7 @@ module.exports = {
     name: "chora",
     alias: [],
     description: "Chora mais",
-    usage: "chora <mencion>",
+    usage: "chora [mencion]",
     category: "Reaccion",
     run: async (client, message, args) => {
         const res = await client.randomJSON("src/json/chora.json");
@@ -12,7 +12,7 @@ module.exports = {
 
         const embed = new MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`**${message.author.username}** ${user ? `hace chorar a ${user.username}` : "Chora"}`)
+            .setDescription(`**${message.author.username}** ${user ? `hace chorar a ${user.username}` : "esta chorando"}`)
             .setImage(res)
         message.channel.send(embed);
     }

@@ -19,6 +19,7 @@ Code & Host in: [Replit](https://replit.com/)
 - [discord.js](https://discord.js.org/#/)
 - [megadb](https://npmjs.com/package/megadb)
 - [moment.js](https://npmjs.com/package/moment)
+. [mal-scraper](https://www.npmjs.com/package/mal-scraper)
 
 ## You Like?
 
@@ -51,6 +52,4 @@ Token=Token
 Color=Embed_Color
 ````
 
-If you use Replit, you can go to the [Akane Project](https://replit.com/@TJDV/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !
-
-This project is Paused.
+If you use Replit, you can go to the [Akane Project](https://replit.com/@TereDeJugo/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !

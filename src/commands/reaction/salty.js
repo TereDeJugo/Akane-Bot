@@ -4,7 +4,7 @@ module.exports = {
     name: "salty",
     alias: [],
     description: "Ensala a alguien",
-    usage: "salty <mencion>",
+    usage: "salty [mencion]",
     category: "Reaccion",
     run: async (client, message, args) => {
         const res = await client.randomJSON("src/json/salty.json");

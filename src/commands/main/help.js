@@ -20,15 +20,15 @@ module.exports = {
                 .addFields(
                     { name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
                     { name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`, `vote`" },
-                    { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`" },
-                    { name: ":nazar_amulet: | Reaccion:", value: "`kiss`, `dance`, `chad`, `chora`, `salty`, `elegant`" },
+                    { name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`, `daily`" },
+                    { name: ":nazar_amulet: | Reaccion:", value: "`kiss`, `hug`, `dance`, `pose`, `chad`, `chora`, `salty`, `elegant`" },
                     { name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
                     { name: ":books: | Utilidad:", value: "`avatar`, `day`, `editsnipe`, `jumbo`, `ping`, `server-icon`, `snipe`, `suggestion`" },
                     { name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
                     { name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
                     { name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
                 )
-                .setFooter(`Akane Tsunemori Bot 1.5.7 | ${prefix}help [comando] para ayuda especifica!`);
+                .setFooter(`Akane Tsunemori Bot 1.5.9 | ${prefix}help [comando] para ayuda especifica!`);
             message.channel.send(embed);
         } else {
             let cmd = client.commands.get(args[0].toLowerCase()) || client.aliases.get(args[0].toLowerCase());
