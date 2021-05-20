@@ -4,6 +4,7 @@ const bot = new db.crearDB("bot_data");
 module.exports = {
     name: "anti-invites",
     alias: ["antiinvites"],
+    perms: ["ADMINISTRATOR"],
     description: "Activa o Desactiva las invitaciones del servidor",
     usage: "anti-invites <on | off>",
     category: "Configuracion",
@@ -56,13 +57,4 @@ module.exports = {
             return message.channel.send("Debes especificar on o off");
         }
     }
-}
-
-module.exports.help = {
-    name: "anti-invites",
-    alias: ["antiinvites"],
-    perms: [],
-    description: "Activa o Desactiva las invitaciones del servidor",
-    usage: "anti-invites <on | off>",
-    category: "Config"
 }

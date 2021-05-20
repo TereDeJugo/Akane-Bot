@@ -1,0 +1,28 @@
+{
+  "name": "Akane-Bot",
+  "version": "1.0.0",
+  "description": "Es un bot multiproposito 100% en español con el cual puedes realizar varias cosas, es sencillo de usar y rapido.",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3",
+    "mal-scraper": "^2.11.3",
+    "megadb": "^3.4.0",
+    "moment": "^2.29.1",
+    "moment-timezone": "^0.5.33"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TereDeJugo/Akane-Bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TereDeJugo/Akane-Bot/issues"
+  },
+  "homepage": "https://github.com/TereDeJugo/Akane-Bot#readme"
+}
