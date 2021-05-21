@@ -18,7 +18,7 @@ module.exports = {
         if(!description) {
             return message.channel.send("Debes decirme cual quieres que sea la descripcion de tu perfil!");
         }
-        else if(description.length > 200) {
+        else if(description.length > 400) {
             return message.channel.send("La descripcion es demasiado larga!");
         }
         else {

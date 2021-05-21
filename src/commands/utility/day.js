@@ -49,7 +49,7 @@ module.exports = {
         }
 
         const dateNow = date.format("dddd");
-        const dateNowS = date.format("MMMM Do YYYY")
+        const dateNowS = date.format("MMMM Do YYYY | HH a")
 
         const embed = new MessageEmbed()
         .setColor("RANDOM")
