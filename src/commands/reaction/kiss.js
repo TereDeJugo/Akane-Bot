@@ -5,6 +5,7 @@ const kissCount = new db.crearDB("kiss_counts");
 module.exports = {
     name: "kiss",
     alias: [],
+    perms: [],
     description: "Dale un beso a un usuario!",
     usage: "kiss [mencion]",
     category: "Reaccion",

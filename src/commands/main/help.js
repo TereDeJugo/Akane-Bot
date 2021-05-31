@@ -5,6 +5,7 @@ const bot = new db.crearDB("bot_data")
 module.exports = {
     name: "help",
     alias: ["commands"],
+    perms: [],
     description: "Recibe ayuda sobre el bot y sus comandos",
     usage: "help",
     category: "Principal",
@@ -13,37 +14,38 @@ module.exports = {
 
         if (!args[0]) {
             const embed = new Discord.MessageEmbed()
-                .setColor(process.env.COLOR)
-                .setTitle("Centro de Ayuda de Akane Bot!")
-                .setImage("https://pa1.narvii.com/6158/5db62d69ceadfc8cd9aa7740c3a09a1cf2cff2ea_hq.gif")
-                .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*\n\n y Yo estoy aqui para protejer la tuya y darte un poco de diversion!\n`)
-                .addFields(
-                    {name: ":beginner: | Prefix:", value: `El prefix de este servidor es **${prefix}**`, },
-                    {name: ":bulb: | Principal:", value: "`help`, `invite`, `prefix`, `vote`" },
-                    {name: ":tada: | Diversion:", value: "`8ball`, `say`, `rps`, `daily`" },
-                    {name: ":nazar_amulet: | Reaccion:", value: "`kiss`, `hug`, `dance`, `pose`, `chad`, `chora`, `salty`, `elegant`" },
-                    {name: ":crystal_ball: | Informacion:", value: "`server-info`, `user-info`, `emote-info`, `ch-info`, `role-info`" },
-                    {name: ":books: | Utilidad:", value: "`avatar`, `day`, `editsnipe`, `jumbo`, `ping`, `server-icon`, `snipe`, `suggestion`" },
-                    {name: ":dna: | Psychopass:", value: "`psychopass`, `dominator`" },
-                    {name: ":coin: | Economia:", value: "`profile`, `set-description`"}, 
-                    {name: ":shield: | Seguridad y Mod:", value: "`ban`, `kick`, `softban`, `clean`, `mute`, `unmute`" },
-                    {name: ":gear: | Configuracion:", value: "`set-prefix`, `set-suggestions`, `set-mute`, `anti-invites`" },
-                )
-                .setFooter(`Akane Tsunemori Bot 1.5.9 | ${prefix}help [comando] para ayuda especifica!`);
+            .setColor(process.env.COLOR)
+            .setTitle("Centro de Ayuda de Akane Bot!")
+            .setImage("https://pa1.narvii.com/6158/5db62d69ceadfc8cd9aa7740c3a09a1cf2cff2ea_hq.gif")
+            .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*`)
+            .addFields(
+                {name:`:beginner: | Prefix:`, value:`El prefix de este servidor es **${prefix}**`},
+
+                {name:":bulb: | Principal:", value: "help - invite - prefix - vote" },
+                {name: ":tada: | Diversion:", value: "8ball - say - rps - daily" },
+                {name: ":nazar_amulet: | Reaccion:", value: "kiss - hug - sad - dance - psychopass - dominator - pose - chad - chora - salty - elegant"},
+                {name: ":crystal_ball: | Informacion:", value: "server-info - user-info - emote-info - ch-info - role-info"},
+                {name: ":books: | Utilidad:", value: "avatar - day - editsnipe - jumbo - ping - leave-server - server-icon - snipe - suggestion"},
+                {name: ":coin: | Economia:", value: "profile - set-description" },
+                {name: ":shield: | Seguridad y Mod:", value: "ban - kick - softban - clean - mute - unmute"},
+                {name: ":gear: | Configuracion:", value: "set-prefix - set-suggestions - set-mute"},
+            )
+            .setFooter(`Akane Tsunemori Bot 1.5.9 | ${prefix}help [comando] para ayuda especifica!`);
+            
             message.channel.send(embed);
         } else {
             let cmd = client.commands.get(args[0].toLowerCase()) || client.aliases.get(args[0].toLowerCase());
             if (cmd) {
-                const cmd_embed = new Discord.MessageEmbed()
-                    .setColor(process.env.COLOR)
-                    .addFields(
-                        { name: "Nombre del comando:", value: cmd.name },
-                        { name: "Descripcion:", value: cmd.description },
-                        { name: "Uso:", value: `\`\`\`${prefix}${cmd.usage}\`\`\`` })
-                    .setFooter("[] - opcional | <> - obligatorio")
+                const cmdEmbed = new Discord.MessageEmbed()
+                .setColor(process.env.COLOR)
+                .addFields(
+                    {name: "Nombre del comando:", value: cmd.name},
+                    {name: "Descripcion:", value: cmd.description},
+                    {name: "Uso:", value: `\`\`\`${prefix}${cmd.usage}\`\`\`` })
+                .setFooter("[] - opcional | <> - obligatorio")
                 if (cmd.alias[0]) {
                     cmd_embed.addFields(
-                        { name: "Alias:", value: cmd.alias.join(" | ") });
+                        {name: "Alias:", value: cmd.alias.join(" | ")});
                 }
                 message.channel.send(cmd_embed);
             } else {

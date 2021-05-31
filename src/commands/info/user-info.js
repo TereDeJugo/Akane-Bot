@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "user-info",
     alias: ["user", "userinfo"],
+    perms: [],
     description: "Consulta la informacion de un usuario o la tuya",
     usage: "userinfo [mencion | id]",
     category: "Informacion",
@@ -63,13 +64,4 @@ module.exports = {
 
         await message.channel.send(embed);
     }
-};
-
-module.exports.help = {
-    name: "user-info",
-    alias: ["user", "userinfo"],
-    perms: [],
-    description: "Consulta la informacion de un usuario o la tuya",
-    usage: "userinfo [mencion | id]",
-    category: "Informacion",
 };

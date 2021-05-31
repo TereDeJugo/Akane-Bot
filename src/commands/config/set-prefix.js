@@ -4,6 +4,7 @@ const bot = new db.crearDB("bot_data");
 module.exports = {
     name: "set-prefix",
     alias: ["setprefix"],
+    perms: [],
     description: "Cambia el prefix de los comandos!",
     usage: "set-prefix <prefix>",
     category: "Configuracion",
@@ -16,12 +17,3 @@ module.exports = {
         }
     }
 };
-
-module.exports.help = {
-    name: "set-prefix",
-    alias: ["setprefix"],
-    perms: [],
-    description: "Cambia mi prefix para los comandos!",
-    usage: "set-prefix <prefix>",
-    category: "Config"
-}

@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "jumbo",
     alias: ["e"],
+    perms: [],
     description: "Ve una imagen completa de un emote",
     usage: "jumbo <emote>",
     category: "Utilidad",

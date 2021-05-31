@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "ping",
     alias: ["p"],
+    perms: [],
     description: "Muestra el ping de Akane",
     usage: "ping",
     category: "Utilidad",

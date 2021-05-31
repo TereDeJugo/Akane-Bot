@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "e-info",
     alias: ["emoji-info", "emoji", "emote", "einfo"],
+    perms: [],
     description: "Ve la informacion de un emote del servidor",
     usage: "e-info <emote>",
     category: "Informacion",

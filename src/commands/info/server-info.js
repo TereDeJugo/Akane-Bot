@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports = {
-    name: "sv-info",
+    name: "server-info",
     alias: ["server", "serverinfo"],
+    perms: [],
     description: "Consulta la informacion del servidor",
     usage: "serverinfo",
     category: "Informacion",

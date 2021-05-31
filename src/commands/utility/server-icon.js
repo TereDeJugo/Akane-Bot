@@ -1,10 +1,11 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "server_icon",
+    name: "server-icon",
     alias: ["servericon", "serveravatar"],
+    perms: [],
     description: "Te muestro el avatar del servidor!",
-    usage: "server_avatar",
+    usage: "server-icon",
     category: "Utilidad",
     run: (client, message, args) => {
         let embed = new MessageEmbed()

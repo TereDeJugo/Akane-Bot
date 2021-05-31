@@ -1,19 +1,19 @@
 const { MessageEmbed } = require("discord.js");
 
 module.exports = {
-    name: "hug",
+    name: "sad",
     alias: [],
     perms: [],
-    description: "Dale un abrazo a un usuario!",
-    usage: "hug [mencion]",
+    description: "Ponte triste",
+    usage: "sad [mencion]",
     category: "Reaccion",
     run: async (client, message, args) => {
-        const res = await client.randomJSON("src/json/hug.json");
+        const res = await client.randomJSON("src/json/sad.json");
         const user = message.mentions.users.first();
 
         const embed = new MessageEmbed()
             .setColor("RANDOM")
-            .setDescription(`**${message.author.username}** abraza fuerte a ${user ? `**${user.username}**` : "el mismo"}`)
+            .setDescription(`**${message.author.username}** esta triste ${user ? `por **${user.username}**` : ""}`)
             .setImage(res)
         message.channel.send(embed);
     }

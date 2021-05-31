@@ -1,15 +1,26 @@
 // Require packages
 
-const db = require("megadb");
-const bot = new db.crearDB("bot_data");
-
-const invites = new db.crearDB("invites");
-const cooldowns = new db.crearDB("cooldowns");
-const currency = new db.crearDB("currency");
+const { crearDB } = require("megadb");
+const bot = new crearDB("bot_data");
+const cooldowns = new crearDB("cooldowns");
+const currency = new crearDB("currency");
 
 const { bot_default } = require("../modules/util.js");
 
 module.exports = async (client, message) => {
+    if (message.channel.id == "843303627064999956") {
+        let guild = client.guilds.cache.get("819593108123287572");
+        let channel = guild.channels.cache.get("819593108982988869");
+
+        channel.startTyping();
+
+        setTimeout(() => {
+            channel.send(message.content).then(() => {
+                channel.stopTyping();
+            })
+        }, 2000)
+    };
+
     if (message.channel.type == "dm" || !message.guild.me.hasPermission("SEND_MESSAGES")) {
         return;
     }
@@ -20,54 +31,26 @@ module.exports = async (client, message) => {
 
     let prefix = await bot.get(`${message.guild.id}.prefix`);
 
-    // Anti invites verify
-
-    if (invites.has(message.guild.id) && !message.member.hasPermission("ADMINISTRATOR")) {
-        channels = await invites.get(message.guild.id);
-
-        if (channels == "none") {
-            if (message.content.match(/(https:\/\/)?(discord.(gg|com)\/(invite\/\w+|\w+))/g)) {
-                message.delete()
-            }
-        } else {
-            for (let i = 0; i <= channels.length; i++) {
-                let ch = message.guild.channels.cache.get(channels[i])
-                if (ch) {
-                    if (message.channel.id != ch.id) {
-                        if (message.content.match(/(https:\/\/)?(discord.(gg|com)\/(invite\/\w+|\w+))/g)) {
-                            message.delete()
-                        }
-                    } else {
-                        break;
-                    }
-                } else {
-                    return;
-                }
-            }
-        }
-    }
-
-     if(message.author.bot) return;
+    if (message.author.bot) return;
 
     // Verify currency
 
-    if(currency.has(message.author.id)) {
+    if (currency.has(message.author.id)) {
         const xpForAdd = Math.floor(Math.random() * 5) + 1;
-        
+
         const userDB = await currency.get(message.author.id);
         const levelUp = 5 * userDB.level + 50 * userDB.level;
 
-        if(message.content.length >= 12) {
+        if (message.content.length >= 12) {
             currency.add(`${message.author.id}.xp`, xpForAdd);
 
             newUserXP = currency.get(`${message.author.id}.xp`)
-            
-            if(userDB.xp >= levelUp) {
-                message.channel.send(`Felicidades! has subido de nivel, ahora eres nivel ${userDB.level + 1}`);
+
+            if (userDB.xp >= levelUp) {
                 currency.add(`${message.author.id}.level`, 1);
             }
-        }        
-    } else {       
+        }
+    } else {
         currency.set(message.author.id, {
             xp: 0,
             level: 1,
@@ -85,18 +68,15 @@ module.exports = async (client, message) => {
 
     // Verify perms
 
-    /* const perms = cmd.help.perms;
+    const perms = cmd.perms;
 
     if (perms) {
-        perms.forEach(p => {
-            let perm = message.guild.me.hasPermission(p)
-
-            if (!perm) {
-                return message.channel.send("Lo siento, no tengo los permisos suficientes para ejecutar este comando!")
+        for (perm of perms) {
+            if (!message.guild.me.hasPermission(perm)) {
+                return message.channel.send("Lo siento, no tengo los permisos suficientes para ejecutar este comando!");
             }
-        })
+        }
     }
-    */
 
     // Verify cooldown
 

@@ -1,8 +1,7 @@
 const bot_default = {
     "prefix": "e!",
     "mute_role": false,
-    "suggestion": false,
-    "anti_invites": false
+    "suggestion": false
     }
 
 module.exports = {

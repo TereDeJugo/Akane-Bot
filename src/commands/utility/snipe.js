@@ -5,6 +5,7 @@ const snipes = new db.crearDB("snipes");
 module.exports = {
     name: "snipe",
     alias: ["snipes", "sp"],
+    perms: [],
     description: "Ve un mensaje recientemente borrado.",
     usage: "snipe",
     category: "Utilidad",

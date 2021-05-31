@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "elegant",
     alias: ["fancy"],
+    perms: [],
     description: "Ponte elegante",
     usage: "elegant [mencion]",
     category: "Reaccion",

@@ -4,6 +4,7 @@ const currency = new db.crearDB("currency");
 module.exports = {
     name: "set-description",
     alias: [],
+    perms: [],
     description: "Ponle una bonita descripcion a tu perfil!",
     usage: "set-description [descripcion]",
     category: "Economia",

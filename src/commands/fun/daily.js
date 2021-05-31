@@ -7,6 +7,7 @@ const recommendedAnimes = new db.crearDB("recommended_animes");
 module.exports = {
     name: "daily",
     alias: ["animanga-daily"],
+    perms: [],
     category: "Diversion",
     description: "Te recomiendo un animanga aleatorio!",
     usage: "anime-daily",

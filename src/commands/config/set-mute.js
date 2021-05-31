@@ -5,6 +5,7 @@ const bot = new db.crearDB("bot_data");
 module.exports = {
     name: "set-mute",
     alias: ["set-muterole", "setmute"],
+    perms: [],
     description: "Selecciona el rol para silenciar",
     usage: "set-mute <mencion | id>",
     category: "Configuracion",
@@ -18,13 +19,4 @@ module.exports = {
             message.channel.send("El rol de silenciado ha sido guardado.");
         }
     }
-}
-
-module.exports.help = {
-    name: "set-mute",
-    alias: ["set-muterole", "setmute"],
-    perms: [],
-    description: "Selecciona el rol que se usara para silenciar",
-    usage: "set-mute <mencion | id>",
-    category: "Config"
 }

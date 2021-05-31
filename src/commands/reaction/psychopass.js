@@ -36,9 +36,10 @@ const gifs = [
 module.exports = {
 	name: 'psychopass',
 	alias: ['psy'],
+    perms: [],
 	description: 'Consulta tu nivel de psychopass',
-	usage: 'psychopass [mention | id]',
-	category: 'PsychoPass',
+	usage: 'psychopass [@mencion]',
+	category: 'Reaccion',
 	run: (client, message, args) => {
 		const psy_level = Math.floor(Math.random() * 400 + 1);
 
@@ -55,16 +56,13 @@ module.exports = {
 		let random = Math.floor(Math.random() * msg.length);
 		let gif_random = Math.floor(Math.random() * gifs.length);
 
-		let user =
-			message.mentions.users.first() || message.author; 
+		let user = message.mentions.users.first() || message.author; 
 
 		let embed = new Discord.MessageEmbed()
 			.setColor('0x4ed1f5')
 			.setDescription(msg[random])
 			.setImage(gifs[gif_random])
-			.setFooter(
-				`${user.username} has sido escaneado con mi Dominator, tu coeficiente criminal es de ${psy_level}.`
-			);
+			.setFooter(`${user.username} has sido escaneado con mi Dominator, tu coeficiente criminal es de ${psy_level}.`);
 		message.channel.send(embed);
 	}
 };

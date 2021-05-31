@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "chad",
     alias: ["based"],
+    perms: [],
     description: "Conviertete en un chad",
     usage: "chad [mencion]",
     category: "Reaccion",

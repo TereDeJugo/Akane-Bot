@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "ban",
     alias: [],
+    perms: ["BAN_MEMBERS"],
     description: "Banea a un usuario",
     usage: "ban <mencion | id>",
     category: "Moderacion",
@@ -14,19 +15,15 @@ module.exports = {
         let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         let reason = args.splice(1).join(" ");
 
-        if (!args[0]) {
-            return message.channel.send("Debes especificar el usuario que quieras banear");
-        } else if (!member) {
-            return message.channel.send("No encuentro a ese usuario por ninguna parte de la base de datos.");
+        if (!member) {
+            return message.channel.send("No has especificado al usuario o no ha sido encontrado.");
         } else if (member.id === message.author.id) {
             return message.channel.send("¿Quieres que te heche a ti? ¿Eres tonto?");
         } else if (member.id === client.user.id) {
             return message.channel.send("¿Quieres hecharme a **mi**?");
         } else if (!member.bannable) {
             return message.channel.send("No puedo banear a alguien con un rol mas alto que el mio");
-        } else if (member.id === undefined) {
-            return message.channel.send("Ese usuario no esta en el servidor");
-        } else if (reason === undefined || reason === "") {
+        } else if (!reason || reason === "") {
             reason = "Sin Especificar";
         }
 
@@ -40,19 +37,8 @@ module.exports = {
             .setImage("https://64.media.tumblr.com/093190a0ca254a89360a3f039994bd11/tumblr_mfsta9i5ry1qjpgvuo5_500.gif");
 
 
-        member.ban({
-            reason: reason
-        }).then(ban => {
+        member.ban({reason:reason}).then(ban => {
             return message.channel.send(embed);
         })
     }
-}
-
-module.exports.help = {
-    name: "ban",
-    alias: [],
-    perms: ["BAN_MEMBERS"],
-    description: "Banea a un usuario",
-    usage: "ban <mencion | id>",
-    category: "Moderacion",
 }

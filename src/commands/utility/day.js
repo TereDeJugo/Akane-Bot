@@ -4,6 +4,7 @@ const moment = require("moment-timezone");
 module.exports = {
     name: "day",
     alias: ["date"],
+    perms: [],
     description: "Te muestra el dia actual con una imagen del anime K-on",
     usage: "day <-1 o +1 (Pueden ser otros numeros)>",
     category: "Utilidad",

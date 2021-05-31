@@ -5,6 +5,7 @@ const bot = new db.crearDB("bot_data");
 module.exports = {
     name: "suggestion",
     alias: ["sg"],
+    perms: [],
     description: "Haz una sugerencia",
     usage: "suggestion <sugerencia>",
     category: "Utilidad",

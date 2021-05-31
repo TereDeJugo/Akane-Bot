@@ -4,6 +4,7 @@ const bot = new db.crearDB("bot_data");
 module.exports = {
     name: "set-suggestions",
     alias: ["setsg", "setsuggestions"],
+    perms: [],
     description: "Selecciona el canal de sugerencias",
     usage: "set-suggestions [mencion | id]",
     category: "Configuracion",
@@ -18,12 +19,3 @@ module.exports = {
         }
     }
 };
-
-module.exports.help = {
-    name: "set-suggestions",
-    alias: ["setsg", "setsuggestions"],
-    perms: [],
-    description: "Selecciona el canal de sugerencias",
-    usage: "set-suggestions [mencion | id]",
-    category: "Configuracion"
-}

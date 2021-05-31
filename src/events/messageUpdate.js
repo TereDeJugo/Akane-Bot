@@ -1,5 +1,5 @@
 const db = require("megadb");
-const editsnipes = new db.crearDB("editsnipes");
+const editSnipes = new db.crearDB("edit_snipes");
 
 module.exports = async (client, oldMessage, newMessage) => {
 
@@ -7,14 +7,15 @@ module.exports = async (client, oldMessage, newMessage) => {
         return;
     }
 
-    editsnipes.set(oldMessage.channel.id, {
+    editSnipes.set(oldMessage.channel.id, {
         old_content: oldMessage.content,
         new_content: newMessage.content,
         user: oldMessage.author.tag,
         server: oldMessage.guild.id,
         channel: oldMessage.channel.name
-    }),
-        setTimeout(() => {
-            editsnipes.delete(oldMessage.channel.id);
-        }, 50000);
+    })
+
+    setTimeout(() => {
+        editSnipes.delete(oldMessage.channel.id);
+    }, 50000);
 };

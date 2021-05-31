@@ -5,6 +5,7 @@ const currency = new db.crearDB("currency");
 module.exports = {
     name: "profile",
     alias: [],
+    perms: [],
     description: "Mira tu perfil o el de otra persona!",
     usage: "profile [@mencion]",
     category: "Economia",

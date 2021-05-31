@@ -1,8 +1,9 @@
-const Discord = require("discord.js");
+const { MessageEmbed } = require("discord.js");
 
 module.exports = {
     name: "kick",
     alias: [],
+    perms: ["KICK_MEMBERS"],
     description: "Kickea a un usuario",
     usage: "kick <mencion | id>",
     category: "Moderacion",
@@ -14,9 +15,7 @@ module.exports = {
         let member = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
         let reason = args.splice(1).join(" ");
 
-        if (!args[0]) {
-            return message.channel.send("Dime, a que usuario quieres kickear?");
-        } else if (!member) {
+        if (!member) {
             return message.channel.send("No encuentro a ese usuario por ninguna parte de la base de datos.");
         } else if (member.id === message.author.id) {
             return message.channel.send("¿Quieres que te heche a ti? ¿Eres tonto?");
@@ -24,13 +23,11 @@ module.exports = {
             return message.channel.send("¿Quieres hecharme a **mi**?");
         } else if (!member.bannable) {
             return message.channel.send("No puedo kickear a alguien con un rol mas alto que el mio");
-        } else if (member.id === undefined) {
-            return message.channel.send("Ese usuario no esta en el servidor");
-        } else if (reason === undefined || reason === "") {
+        } else if (!reason || reason === "") {
             reason = "Sin Especificar";
         }
 
-        const embed = new Discord.MessageEmbed()
+        const embed = new MessageEmbed()
             .setTitle("Usuario Kickeado")
             .setColor("0xff0000")
             .setThumbnail(member.user.displayAvatarURL())
@@ -44,12 +41,3 @@ module.exports = {
         })
     }
 };
-
-module.exports.help = {
-    name: "kick",
-    alias: [],
-    perms: ["KICK_MEMBERS"],
-    description: "Kickea a un usuario",
-    usage: "kick <mencion | id>",
-    category: "Moderacion",
-}

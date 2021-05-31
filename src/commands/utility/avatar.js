@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "avatar",
     alias: ["userimage", "usericon", "icon"],
+    perms: [],
     description: "Te muestra tu avatar o el de otro usuario",
     usage: "avatar [mention]",
     category: "Utilidad",

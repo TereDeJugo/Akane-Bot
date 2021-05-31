@@ -3,9 +3,10 @@ const Discord = require("discord.js");
 module.exports = {
     name: "dominator",
     alias: ["dom"],
+    perms: [],
     description: "Usa el dominator en ti mismo o otro usuario",
     usage: "dominator <mencion | id>",
-    category: "PsychoPass",
+    category: "Reaccion",
     run: async (client, message, args) => {
         let res = await client.randomJSON("src/json/dominator.json");
 

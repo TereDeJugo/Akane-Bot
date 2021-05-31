@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "invite",
     alias: [],
+    perms: [],
     description: "Te muestra los links de invitacion del bot y del servidor de soporte.",
     usage: "invite",
     category: "Principal",
@@ -18,12 +19,3 @@ module.exports = {
         message.channel.send(embed);
     }
 };
-
-module.exports.help = {
-    name: "invite",
-    alias: [],
-    perms: [],
-    description: "Te muestro mis links de invitacion y de mi servidor de soporte.",
-    usage: "invite",
-    category: "Main"
-}

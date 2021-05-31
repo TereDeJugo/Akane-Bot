@@ -3,6 +3,7 @@ const { MessageEmbed } = require("discord.js");
 module.exports = {
     name: "salty",
     alias: [],
+    perms: [],
     description: "Ensala a alguien",
     usage: "salty [mencion]",
     category: "Reaccion",

@@ -1,36 +1,19 @@
 // Require Packaxes
 
-const Discord = require("discord.js");
-const fs = require("fs");
+const Discord = require('discord.js');
+const fs = require('fs');
 
 // Discord Client config
 
 const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"] });
-
-require("./modules/client.js")(Discord, client)
-
-const dirs = [
-    __dirname + "/commands/main",
-    __dirname + "/commands/info",
-    __dirname + "/commands/config",
-    __dirname + "/commands/currency",
-    __dirname + "/commands/fun",
-    __dirname + "/commands/moderation",
-    __dirname + "/commands/psychopass",
-    __dirname + "/commands/reaction",
-    __dirname + "/commands/secret",
-    __dirname + "/commands/utility",
-    __dirname + "/commands/owner",
-];
+require("./modules/client.js")(Discord, client);
 
 // Commands & Events Handler
 
-dirs.forEach(x => {
-    let file2 = fs.readdirSync(x);
-    file2.forEach(async y => {
-        let file = y;
+for (dir of fs.readdirSync(__dirname + '/commands')) {
+    for (file of fs.readdirSync(__dirname + "/commands/" + dir)) {
         if (file.endsWith(".js")) {
-            let content = await require(x + "/" + file);
+            let content = require(__dirname + `/commands/${dir}/${file}`);
             let name = content.name;
 
             client.commands.set(name, content);
@@ -41,8 +24,8 @@ dirs.forEach(x => {
                 }
             }
         }
-    });
-});
+    }
+}
 
 for (const file of fs.readdirSync(__dirname + "/events")) {
     if (file.endsWith(".js")) {

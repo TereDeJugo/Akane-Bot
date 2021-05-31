@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 module.exports = {
     name: "channel-info",
     alias: ["ch-info", "channelinfo", "chinfo"],
+    perms: [],
     description: "Ve la informacion de un canal",
     usage: "channel-info <mencion | id>",
     category: "Informacion",

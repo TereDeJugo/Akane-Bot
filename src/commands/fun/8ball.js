@@ -3,6 +3,7 @@ const Discord = require("discord.js")
 module.exports = {
     name: "8ball",
     alias: [],
+    perms: [],
     description: "Akane te respondera a tu pregunta...",
     usage: "8ball <pregunta>",
     category: "Diversion",
@@ -24,12 +25,3 @@ module.exports = {
         message.channel.send(embed);
     }
 };
-
-module.exports.help = {
-    name: "8ball",
-    alias: [],
-    perms: [],
-    description: "Akane te respondera a tu pregunta...",
-    usage: "8ball <pregunta>",
-    category: "Diversion"
-}
