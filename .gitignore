@@ -1,3 +1,4 @@
 .env
 src/mega_databases
+package.json
 package-lock.json
