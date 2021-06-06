@@ -12,6 +12,15 @@ module.exports = {
     run: async (client, message, args) => {
         let prefix = await bot.get(`${message.guild.id}.prefix`);
 
+		const mainCommands = client.commands.filter(x => x.category == "Principal").map(x => "`" + x.name + "`").join(", ");
+		const funCommands = client.commands.filter(x => x.category == "Diversion").map(x => "`" + x.name + "`").join(", ");
+		const reactionCommands = client.commands.filter(x => x.category == "Reaccion").map(x => "`" + x.name + "`").join(", ");
+		const infoCommands = client.commands.filter(x => x.category == "Informacion").map(x => "`" + x.name + "`").join(", ");
+		const utilCommands = client.commands.filter(x => x.category == "Utilidad").map(x => "`" + x.name + "`").join(", ");
+		const currencyCommands = client.commands.filter(x => x.category == "Economia").map(x => "`" + x.name + "`").join(", ");
+		const modCommands = client.commands.filter(x => x.category == "Moderacion").map(x => "`" + x.name + "`").join(", ");
+		const configCommands = client.commands.filter(x => x.category == "Configuracion").map(x => "`" + x.name + "`").join(", ");
+
         if (!args[0]) {
             const embed = new Discord.MessageEmbed()
             .setColor(process.env.COLOR)
@@ -20,15 +29,14 @@ module.exports = {
             .setDescription(`*La ley no protege a la gente, sino que la gente protege la ley...*`)
             .addFields(
                 {name:`:beginner: | Prefix:`, value:`El prefix de este servidor es **${prefix}**`},
-
-                {name:":bulb: | Principal:", value: "help - invite - prefix - vote" },
-                {name: ":tada: | Diversion:", value: "8ball - say - rps - daily" },
-                {name: ":nazar_amulet: | Reaccion:", value: "kiss - hug - sad - dance - psychopass - dominator - pose - chad - chora - salty - elegant"},
-                {name: ":crystal_ball: | Informacion:", value: "server-info - user-info - emote-info - ch-info - role-info"},
-                {name: ":books: | Utilidad:", value: "avatar - day - editsnipe - jumbo - ping - leave-server - server-icon - snipe - suggestion"},
-                {name: ":coin: | Economia:", value: "profile - set-description" },
-                {name: ":shield: | Seguridad y Mod:", value: "ban - kick - softban - clean - mute - unmute"},
-                {name: ":gear: | Configuracion:", value: "set-prefix - set-suggestions - set-mute"},
+                {name:":bulb: | Principal:", value: mainCommands},
+                {name: ":tada: | Diversion:", value: funCommands},
+                {name: ":nazar_amulet: | Reaccion:", value: reactionCommands},
+                {name: ":crystal_ball: | Informacion:", value: infoCommands},
+                {name: ":books: | Utilidad:", value: utilCommands},
+                {name: ":coin: | Economia:", value: currencyCommands},
+                {name: ":shield: | Seguridad y Mod:", value: modCommands},
+                {name: ":gear: | Configuracion:", value: configCommands},
             )
             .setFooter(`Akane Tsunemori Bot 1.5.9 | ${prefix}help [comando] para ayuda especifica!`);
             

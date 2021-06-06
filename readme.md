@@ -4,12 +4,14 @@ Multiporpose Discord bot in spanish
 
 - Multiporpose
 - +40 Commands 
+- Dynamic Help
+- Dynamic handler
 - Constant updates
 - Open Source
 - JSON Database
 - Gifs from Giphy and Imgur
 
-<img src="https://pa1.narvii.com/6530/3a4572bab7b60e11f20d6927178f8ca7497e05b8_hq.gif"/>
+![](https://pa1.narvii.com/6530/3a4572bab7b60e11f20d6927178f8ca7497e05b8_hq.gif)
 
 ## Made With
 
@@ -53,3 +55,4 @@ Color=Embed_Color
 ````
 
 If you use Replit, you can go to the [Akane Project](https://replit.com/@TereDeJugo/Akane-Bot), and make it Fork, and you will have everything installed, you only need to make the file `.env` !
+
