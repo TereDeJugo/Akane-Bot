@@ -60,7 +60,7 @@ module.exports = async (client, message) => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    let args = message.content.slice(prefix.length).split(/ +/);
+    let args = message.content.slice(prefix.length).trim().split(/ +/);
     let command = args.shift().toLowerCase();
 
     let cmd = client.commands.get(command) || client.aliases.get(command);

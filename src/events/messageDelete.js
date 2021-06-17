@@ -1,6 +1,9 @@
+const db = require("megadb");
+const snipes = new db.crearDB("snipes");
+
 module.exports = async (client, message) => {
-    const db = require("megadb");
-    let snipes = new db.crearDB("snipes");
+    
+    if(message.bot || message.webhookID) return;
 
     if (!message.content) {
         return;

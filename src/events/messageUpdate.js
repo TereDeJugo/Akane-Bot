@@ -2,6 +2,7 @@ const db = require("megadb");
 const editSnipes = new db.crearDB("edit_snipes");
 
 module.exports = async (client, oldMessage, newMessage) => {
+    if(oldMessage.bot || oldMessage.weebhookID || !oldMessage.user) return;
 
     if (!oldMessage.content) {
         return;

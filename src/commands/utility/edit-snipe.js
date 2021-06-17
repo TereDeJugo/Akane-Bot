@@ -17,9 +17,9 @@ module.exports = {
             editSnipe = await editSnipes.get(message.channel.id);
             let embed = new MessageEmbed()
             .setColor("RANDOM")
-            .setAuthor(`Mensaje editado de ${editsnipe.user}`)
-            .setDescription(`**Mensaje Original:** ${editsnipe.old_content}\n**Mensaje Editado:** ${editsnipe.new_content}`)
-            .setFooter(`Editado en #${editsnipe.channel}`);
+            .setAuthor(`Mensaje editado de ${editSnipe.user}`)
+            .setDescription(`**Mensaje Original:** ${editSnipe.old_content}\n**Mensaje Editado:** ${editSnipe.new_content}`)
+            .setFooter(`Editado en #${editSnipe.channel}`);
 
             message.channel.send(embed);
         }
