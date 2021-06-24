@@ -19,12 +19,13 @@ module.exports = {
 		});
 
 		for(result of results.results) {
-			images.push({title: result.title, image: result.image});
+			images.push({title: result.title, image: result.image, url: result.url});
 		}
 
 		const embed = new MessageEmbed()
 		.setColor("ORANGE")
 		.setTitle(images[currentImage].title)
+		.setURL(images[currentImage].url)
 		.setImage(images[currentImage].image)
 		.setFooter(`${currentImage+1}/${images.length+1}`);
 
@@ -40,6 +41,7 @@ module.exports = {
 					currentImage = currentImage + 1;
 
 					embed.setTitle(images[currentImage].title);
+					embed.setURL(images[currentImage].url)
 					embed.setImage(images[currentImage].image);
 					embed.setFooter(`${currentImage+1}/${images.length+1}`);
 
@@ -51,6 +53,7 @@ module.exports = {
 					currentImage = currentImage - 1;
 					
 					embed.setTitle(images[currentImage].title);
+					embed.setURL(images[currentImage].url)
 					embed.setImage(images[currentImage].image);
 					embed.setFooter(`${currentImage+1}/${images.length+1}`);
 
