@@ -1,13 +1,9 @@
 const db = require("megadb");
 const snipes = new db.crearDB("snipes");
 
-module.exports = async (client, message) => {
-    
-    if(message.bot || message.webhookID) return;
-
-    if (!message.content) {
-        return;
-    }
+module.exports = async (client, message) => {    
+    if (message.author.bot || message.webhookID) return;
+    if (!message.content) return;
 
     snipes.set(message.channel.id, {
         content: message.content,

@@ -52,10 +52,10 @@ module.exports = {
                     {name: "Uso:", value: `\`\`\`${prefix}${cmd.usage}\`\`\`` })
                 .setFooter("[] - opcional | <> - obligatorio")
                 if (cmd.alias[0]) {
-                    cmd_embed.addFields(
+                    cmdEmbed.addFields(
                         {name: "Alias:", value: cmd.alias.join(" | ")});
                 }
-                message.channel.send(cmd_embed);
+                message.channel.send(cmdEmbed);
             } else {
                 message.channel.send("Debes decirme un comando valido!");
             }
